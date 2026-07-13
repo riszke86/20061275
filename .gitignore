@@ -1,0 +1,13 @@
+# ========NODE MODULES========== #
+node_modules/
+
+
+# ========OPERATING SYSTEM FILES========== #
+.DS_Store
+Thumbs.db
+
+
+# ========LOG FILES========== #
+*.log
+
+We do not ign
