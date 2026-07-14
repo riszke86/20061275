@@ -14,9 +14,7 @@
 
 <body>
 
-    <!-- ==========================================
-         NAVIGATION
-    =========================================== -->
+    <!-- ===============NAVIGATION================== -->
 
     <header>
         <nav class="navbar">
@@ -33,27 +31,155 @@
     </header>
 
 
-    <!-- ==========================================
-         HERO SECTION
-    =========================================== -->
+<!-- ==============HERO SECTION========================= -->
+<section class="hero">
 
-    <section class="hero">
-        <video autoplay muted loop playsinline>
-            <source src="/videos/hero.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content">
-            <h1>Explore the Ocean</h1>
-            <p>
-                Discover incredible marine life,
-                immersive underwater habitats,
-                and ocean conservation.
-            </p>
-            <a href="/zones" class="button">
-                Explore Zones
-            </a>
-        </div>
-    </section>
+    <video autoplay muted loop playsinline>
+        <source src="/videos/hero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+
+        <h1>Explore the Ocean</h1>
+
+        <p>
+            Discover incredible marine life, immersive underwater habitats,
+            and the importance of ocean conservation.
+        </p>
+
+        <a href="/zones" class="button">
+            Explore Zones
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ========FEATURED AQUARIUM ZONES========== -->
+
+<section class="featured-zones">
+    <div class="section-heading">
+
+        <p class="section-label">Explore Aquarium World</p>
+
+        <h2>Discover Our Marine Worlds</h2>
+
+        <p class="section-introduction">
+            Journey through four immersive habitats and discover the animals,
+            environments and conservation stories found within each zone.
+        </p>
+    </div>
+
+
+    <div class="zone-grid">
+
+        <!-- ========CORAL KINGDOM CARD========== -->
+        <article class="zone-card">
+            <img
+                src="/images/zones/coral-kingdom.png"
+                alt="Colourful tropical fish swimming around a coral reef"
+            >
+            <div class="zone-card-overlay"></div>
+            <div class="zone-card-content">
+
+                <p class="zone-number">Zone 01</p>
+
+                <h3>Coral Kingdom</h3>
+
+                <p>
+                    Explore a vibrant reef filled with colourful fish,
+                    living corals and fascinating marine relationships.
+                </p>
+
+                <a href="/zones" class="zone-link">
+                    Discover this zone
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </article>
+
+
+        <!-- ========DEEP SEA TRENCH CARD========== -->
+        <article class="zone-card">
+            <img
+                src="/images/zones/deep-sea.png"
+                alt="Bioluminescent sea creatures swimming in a deep ocean trench"
+            >
+            <div class="zone-card-overlay"></div>
+            <div class="zone-card-content">
+
+                <p class="zone-number">Zone 02</p>
+
+                <h3>Deep Sea Trench</h3>
+
+                <p>
+                    Enter the mysterious deep ocean and meet animals adapted
+                    to darkness, pressure and extreme environments.
+                </p>
+
+                <a href="/zones" class="zone-link">
+                    Discover this zone
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </article>
+
+
+        <!-- ========COASTAL ROCKPOOLS CARD========== -->
+        <article class="zone-card">
+            <img
+                src="/images/zones/coastal-rockpools.png"
+                alt="Sea stars, crabs and anemones living in coastal rockpools"
+            >
+            <div class="zone-card-overlay"></div>
+            <div class="zone-card-content">
+
+                <p class="zone-number">Zone 03</p>
+
+                <h3>Coastal Rockpools</h3>
+
+                <p>
+                    Discover resilient coastal animals living between the
+                    tides in shallow pools and rocky habitats.
+                </p>
+
+                <a href="/zones" class="zone-link">
+                    Discover this zone
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </article>
+
+
+        <!-- ========FRESHWATER RAINFOREST CARD========== -->
+        <article class="zone-card">
+            <img
+                src="/images/zones/freshwater-rainforest.png"
+                alt="Freshwater fish and turtles in a tropical rainforest river"
+            >
+            <div class="zone-card-overlay"></div>
+            <div class="zone-card-content">
+
+                <p class="zone-number">Zone 04</p>
+
+                <h3>Freshwater Rainforest</h3>
+
+                <p>
+                    Travel into a tropical river ecosystem surrounded by
+                    freshwater fish, turtles and lush rainforest plants.
+                </p>
+
+                <a href="/zones" class="zone-link">
+                    Discover this zone
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </article>
+    </div>
+</section>
+
     <script src="/js/script.js"></script>
 
 </body>
