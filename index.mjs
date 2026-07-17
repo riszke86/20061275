@@ -48,6 +48,10 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
+app.get("/about", (req, res) => {
+    res.render("about");
+});
+
 app.get("/zones", (req, res) => {
     res.render("zones");
 });
@@ -59,7 +63,6 @@ app.get("/faq", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact");
 });
-
 
 // ======================================
 // START SERVER

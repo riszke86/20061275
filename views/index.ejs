@@ -1,37 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("partials/header", { pageTitle: "Home" }) %>
 
-<head>
+<!-- ============== HERO SECTION ========================= -->
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Aquarium World</title>
-
-    <link rel="stylesheet" href="/css/styles.css">
-
-</head>
-
-<body>
-
-    <!-- ===============NAVIGATION================== -->
-
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                Aquarium World
-            </div>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/zones">Zones</a></li>
-                <li><a href="/faq">FAQ</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
-<!-- ==============HERO SECTION========================= -->
 <section class="hero">
 
     <video autoplay muted loop playsinline>
@@ -57,36 +27,86 @@
 </section>
 
 
-<!-- ========FEATURED AQUARIUM ZONES========== -->
+<!-- ============== OPENING TIMES ========================= -->
 
-<section class="featured-zones">
+<section class="opening-times">
+
     <div class="section-heading">
 
-        <p class="section-label">Explore Aquarium World</p>
+        <p class="section-label">
+            Plan Your Visit
+        </p>
 
-        <h2>Discover Our Marine Worlds</h2>
+        <h2>
+            Opening Times
+        </h2>
+
+    </div>
+
+    <div class="opening-times-card">
+
+        <h3>Open Every Day</h3>
+
+        <p>
+            <strong>9:00 AM – 6:00 PM</strong>
+        </p>
+
+        <p>
+            Last admission is at 5:00 PM.
+        </p>
+
+        <a href="/contact" class="button">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ============== FEATURED ZONES ========================= -->
+
+<section class="featured-zones">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Explore Aquarium World
+        </p>
+
+        <h2>
+            Discover Our Marine Worlds
+        </h2>
 
         <p class="section-introduction">
             Journey through four immersive habitats and discover the animals,
             environments and conservation stories found within each zone.
         </p>
-    </div>
 
+    </div>
 
     <div class="zone-grid">
 
-        <!-- ========CORAL KINGDOM CARD========== -->
+        <!-- Coral Kingdom -->
+
         <article class="zone-card">
+
             <img
                 src="/images/zones/coral-kingdom.png"
                 alt="Colourful tropical fish swimming around a coral reef"
             >
+
             <div class="zone-card-overlay"></div>
+
             <div class="zone-card-content">
 
-                <p class="zone-number">Zone 01</p>
+                <p class="zone-number">
+                    Zone 01
+                </p>
 
-                <h3>Coral Kingdom</h3>
+                <h3>
+                    Coral Kingdom
+                </h3>
 
                 <p>
                     Explore a vibrant reef filled with colourful fish,
@@ -94,93 +114,260 @@
                 </p>
 
                 <a href="/zones" class="zone-link">
-                    Discover this zone
-                    <span aria-hidden="true">→</span>
+                    Discover this zone →
                 </a>
+
             </div>
+
         </article>
 
 
-        <!-- ========DEEP SEA TRENCH CARD========== -->
+        <!-- Deep Sea -->
+
         <article class="zone-card">
+
             <img
                 src="/images/zones/deep-sea.png"
-                alt="Bioluminescent sea creatures swimming in a deep ocean trench"
+                alt="Deep sea creatures"
             >
+
             <div class="zone-card-overlay"></div>
+
             <div class="zone-card-content">
 
-                <p class="zone-number">Zone 02</p>
+                <p class="zone-number">
+                    Zone 02
+                </p>
 
-                <h3>Deep Sea Trench</h3>
+                <h3>
+                    Deep Sea Trench
+                </h3>
 
                 <p>
-                    Enter the mysterious deep ocean and meet animals adapted
-                    to darkness, pressure and extreme environments.
+                    Meet extraordinary animals adapted to life in the darkest
+                    parts of the ocean.
                 </p>
 
                 <a href="/zones" class="zone-link">
-                    Discover this zone
-                    <span aria-hidden="true">→</span>
+                    Discover this zone →
                 </a>
+
             </div>
+
         </article>
 
 
-        <!-- ========COASTAL ROCKPOOLS CARD========== -->
+        <!-- Rock Pools -->
+
         <article class="zone-card">
+
             <img
                 src="/images/zones/coastal-rockpools.png"
-                alt="Sea stars, crabs and anemones living in coastal rockpools"
+                alt="Coastal rock pools"
             >
+
             <div class="zone-card-overlay"></div>
+
             <div class="zone-card-content">
 
-                <p class="zone-number">Zone 03</p>
+                <p class="zone-number">
+                    Zone 03
+                </p>
 
-                <h3>Coastal Rockpools</h3>
+                <h3>
+                    Coastal Rockpools
+                </h3>
 
                 <p>
-                    Discover resilient coastal animals living between the
-                    tides in shallow pools and rocky habitats.
+                    Discover fascinating creatures living between the tides.
                 </p>
 
                 <a href="/zones" class="zone-link">
-                    Discover this zone
-                    <span aria-hidden="true">→</span>
+                    Discover this zone →
                 </a>
+
             </div>
+
         </article>
 
 
-        <!-- ========FRESHWATER RAINFOREST CARD========== -->
+        <!-- Rainforest -->
+
         <article class="zone-card">
+
             <img
                 src="/images/zones/freshwater-rainforest.png"
-                alt="Freshwater fish and turtles in a tropical rainforest river"
+                alt="Freshwater rainforest"
             >
+
             <div class="zone-card-overlay"></div>
+
             <div class="zone-card-content">
 
-                <p class="zone-number">Zone 04</p>
+                <p class="zone-number">
+                    Zone 04
+                </p>
 
-                <h3>Freshwater Rainforest</h3>
+                <h3>
+                    Freshwater Rainforest
+                </h3>
 
                 <p>
-                    Travel into a tropical river ecosystem surrounded by
-                    freshwater fish, turtles and lush rainforest plants.
+                    Explore tropical rivers filled with unique freshwater
+                    wildlife.
                 </p>
 
                 <a href="/zones" class="zone-link">
-                    Discover this zone
-                    <span aria-hidden="true">→</span>
+                    Discover this zone →
                 </a>
+
             </div>
+
         </article>
+
     </div>
+
 </section>
 
-    <script src="/js/script.js"></script>
 
-</body>
-</html>
+<!-- ============== EXPERIENCES ========================= -->
+
+<section class="experiences">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Experiences
+        </p>
+
+        <h2>
+            More Than Just an Aquarium
+        </h2>
+
+    </div>
+
+    <div class="experience-grid">
+
+        <article class="experience-card">
+
+            <h3>
+                Shark Feeding
+            </h3>
+
+            <p>
+                Watch our aquarists feed the sharks and learn about their
+                behaviour.
+            </p>
+
+        </article>
+
+        <article class="experience-card">
+
+            <h3>
+                Rock Pool Discovery
+            </h3>
+
+            <p>
+                Meet fascinating coastal creatures in our interactive exhibit.
+            </p>
+
+        </article>
+
+        <article class="experience-card">
+
+            <h3>
+                Behind the Scenes
+            </h3>
+
+            <p>
+                Discover how Aquarium World cares for hundreds of marine
+                animals every day.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ============== FAQ ========================= -->
+
+<section class="home-faq">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Visitor Information
+        </p>
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+    </div>
+
+    <div class="faq-list">
+
+        <div class="faq-item">
+
+            <h3>
+                What are your opening times?
+            </h3>
+
+            <p>
+                We are open every day from 9:00 AM until 6:00 PM.
+            </p>
+
+        </div>
+
+        <div class="faq-item">
+
+            <h3>
+                Do I need to book in advance?
+            </h3>
+
+            <p>
+                Booking is recommended during weekends and school holidays.
+            </p>
+
+        </div>
+
+        <div class="faq-item">
+
+            <h3>
+                Is the aquarium accessible?
+            </h3>
+
+            <p>
+                Yes. Aquarium World has accessible routes throughout the
+                attraction.
+            </p>
+
+        </div>
+
+        <div class="faq-item">
+
+            <h3>
+                Can I bring food?
+            </h3>
+
+            <p>
+                Yes, food may be eaten in the designated picnic area.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="section-action">
+
+        <a href="/faq" class="button">
+            View All FAQs
+        </a>
+
+    </div>
+
+</section>
+
+<%- include("partials/footer") %>
