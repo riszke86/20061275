@@ -1,0 +1,172 @@
+/* =============ABOUT PAGE — BASIC STRUCTURE================ */
+
+.page-hero {
+    min-height: 430px;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #063b46;
+}
+
+.page-hero-content {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    max-width: 760px;
+}
+
+.page-hero h1 {
+    margin: 10px 0 20px;
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    line-height: 1.1;
+}
+
+.page-hero p {
+    max-width: 700px;
+    font-size: 1.15rem;
+}
+
+.about-story,
+.about-conservation {
+    padding: 80px 20px;
+}
+
+.about-section-container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text-content h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.about-image-placeholder {
+    min-height: 380px;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    background-color: #367786;
+}
+
+.about-mission,
+.about-education,
+.about-values {
+    padding: 80px 20px;
+}
+
+.about-mission,
+.about-values {
+    background-color: #edf7f8;
+}
+
+.mission-grid,
+.education-grid,
+.values-grid {
+    width: min(1100px, 90%);
+    margin: 40px auto 0;
+    display: grid;
+    gap: 25px;
+}
+
+.mission-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.education-grid,
+.values-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mission-card,
+.education-card,
+.value-card {
+    padding: 30px;
+    border: 1px solid #d1dfe2;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.mission-number {
+    margin: 0;
+    font-weight: 700;
+    color: #087f8c;
+}
+
+.about-conservation {
+    color: white;
+    background-color: #073944;
+}
+
+.about-conservation .about-image-placeholder {
+    background-color: #175967;
+}
+
+.reverse-layout .about-image-placeholder {
+    order: 1;
+}
+
+.reverse-layout .about-text-content {
+    order: 2;
+}
+
+.animal-care-section {
+    padding: 90px 20px;
+    color: white;
+    background-color: #0a535f;
+}
+
+.animal-care-content {
+    width: min(800px, 90%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.animal-care-content h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.about-call-to-action {
+    padding: 90px 20px;
+    color: white;
+    text-align: center;
+    background-color: #052a32;
+}
+
+.call-to-action-content {
+    width: min(760px, 90%);
+    margin: 0 auto;
+}
+
+.call-to-action-content h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.call-to-action-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+@media (max-width: 800px) {
+
+    .about-section-container,
+    .mission-grid,
+    .education-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reverse-layout .about-image-placeholder,
+    .reverse-layout .about-text-content {
+        order: initial;
+    }
+}

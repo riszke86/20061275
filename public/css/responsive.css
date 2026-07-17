@@ -1,0 +1,85 @@
+/* =============RESPONSIVE DESIGN================ */
+
+@media (max-width: 800px) {
+
+    /* Navigation */
+
+    .navbar {
+        position: relative;
+        padding: 20px;
+
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+
+    /* Shared headings */
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .section-introduction {
+        font-size: 17px;
+    }
+
+
+    /* Home page */
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-content p {
+        font-size: 19px;
+        line-height: 1.7;
+    }
+
+    .featured-zones {
+        padding: 80px 20px;
+    }
+
+    .zone-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .zone-card {
+        min-height: 420px;
+    }
+
+    .zone-card-content {
+        padding: 28px;
+    }
+
+    .zone-card h3 {
+        font-size: 28px;
+    }
+
+
+    /* About page */
+
+    .about-section-container,
+    .mission-grid,
+    .education-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reverse-layout .about-image-placeholder,
+    .reverse-layout .about-text-content {
+        order: initial;
+    }
+
+
+    /* Experiences page */
+
+    .experiences-page-grid {
+        grid-template-columns: 1fr;
+    }
+}

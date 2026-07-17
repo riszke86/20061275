@@ -1,0 +1,88 @@
+/* =============EXPERIENCES PAGE — BASIC STRUCTURE================ */
+
+.experiences-introduction {
+    padding: 80px 20px 30px;
+}
+
+.all-experiences {
+    padding: 30px 20px 90px;
+}
+
+.experiences-page-grid {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.experience-detail-card {
+    overflow: hidden;
+    border: 1px solid #d1dfe2;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.experience-image-placeholder {
+    min-height: 260px;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    color: #ffffff;
+    background-color: #346f7b;
+}
+
+.experience-detail-content {
+    padding: 30px;
+}
+
+.experience-detail-content h2 {
+    margin: 8px 0 15px;
+}
+
+.experience-type {
+    margin: 0;
+    color: #087f8c;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.experience-information {
+    margin: 25px 0 0;
+    padding-left: 20px;
+}
+
+.experience-information li {
+    margin-bottom: 10px;
+}
+
+.experience-visitor-information {
+    padding: 90px 20px;
+    color: #ffffff;
+    background-color: #073944;
+}
+
+.experience-information-content {
+    width: min(800px, 90%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.experience-information-content h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.experiences-call-to-action {
+    padding: 90px 20px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #052a32;
+}
+
+@media (max-width: 800px) {
+
+    .experiences-page-grid {
+        grid-template-columns: 1fr;
+    }
+}

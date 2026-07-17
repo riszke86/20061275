@@ -1,0 +1,161 @@
+/* =============NAVIGATION================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    padding: 22px 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(2, 23, 40, 0.35);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.logo {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.navbar a {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #90e0ef;
+}
+
+
+/* =============BUTTONS================ */
+
+.button {
+    display: inline-block;
+    padding: 18px 42px;
+
+    border-radius: 50px;
+    background: #0099ff;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #00b4d8;
+    transform: translateY(-3px);
+}
+
+.button-secondary {
+    border: 2px solid #90e0ef;
+    background: transparent;
+}
+
+.button-secondary:hover {
+    background: #90e0ef;
+    color: #021728;
+}
+
+
+/* =============SHARED SECTION HEADINGS================ */
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.section-label {
+    margin-bottom: 14px;
+
+    color: #90e0ef;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    line-height: 1.15;
+}
+
+.section-introduction {
+    color: #caf0f8;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+
+/* =============SHARED PAGE HERO================ */
+
+.page-hero {
+    min-height: 430px;
+    padding: 140px 20px 100px;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+    background-color: #063b46;
+}
+
+.page-hero-content {
+    width: min(1100px, 90%);
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.page-hero h1 {
+    margin: 10px 0 20px;
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    line-height: 1.1;
+}
+
+.page-hero p {
+    max-width: 700px;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+
+/* =============SHARED CALL TO ACTION================ */
+
+.call-to-action-content {
+    width: min(760px, 90%);
+    margin: 0 auto;
+}
+
+.call-to-action-content h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.call-to-action-buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
