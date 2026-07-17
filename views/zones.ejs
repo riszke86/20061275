@@ -1,15 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Page</title>
-</head>
+<%- include("partials/header", { pageTitle: "Aquarium Zones" }) %>
 
-<body>
+<!-- ================= HERO ================= -->
 
-<h1>This page works!</h1>
+<section class="page-hero zones-hero">
 
-<a href="/">Back Home</a>
+    <div class="page-hero-content">
 
-</body>
-</html>
+        <p class="section-label">Explore Aquarium World</p>
+
+        <h1>Discover Our Four Marine Zones</h1>
+
+        <p>
+            Explore four unique aquatic environments, each home to fascinating
+            animals and interactive exhibits from around the world.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ZONES ================= -->
+
+<section class="featured-zones">
+
+    <div class="section-heading">
+
+        <p class="section-label">Aquarium Zones</p>
+
+        <h2>Choose Your Adventure</h2>
+
+        <p class="section-introduction">
+            Each zone recreates a different underwater habitat and contains
+            four exciting exhibits to discover.
+        </p>
+
+    </div>
+
+    <div class="zones-grid">
+
+        <!-- Coral Kingdom -->
+
+        <a href="/zones/coral-kingdom" class="zone-card">
+
+            <div class="zone-image-placeholder">
+                Coral Kingdom
+            </div>
+
+            <div class="zone-content">
+
+                <h3>Coral Kingdom</h3>
+
+                <p>
+                    Colourful coral reefs filled with tropical fish, sea turtles
+                    and vibrant marine life.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Deep Sea Trench -->
+
+        <a href="/zones/deep-sea-trench" class="zone-card">
+
+            <div class="zone-image-placeholder">
+                Deep Sea Trench
+            </div>
+
+            <div class="zone-content">
+
+                <h3>Deep Sea Trench</h3>
+
+                <p>
+                    Journey into the deepest parts of the ocean and discover
+                    mysterious creatures that live without sunlight.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Coastal Rockpools -->
+
+        <a href="/zones/coastal-rockpools" class="zone-card">
+
+            <div class="zone-image-placeholder">
+                Coastal Rockpools
+            </div>
+
+            <div class="zone-content">
+
+                <h3>Coastal Rockpools</h3>
+
+                <p>
+                    Explore the fascinating animals found along the shoreline,
+                    from starfish to crabs and sea anemones.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Rainforest Rivers -->
+
+        <a href="/zones/rainforest-rivers" class="zone-card">
+
+            <div class="zone-image-placeholder">
+                Rainforest Rivers
+            </div>
+
+            <div class="zone-content">
+
+                <h3>Rainforest Rivers</h3>
+
+                <p>
+                    Discover freshwater habitats inspired by the Amazon and
+                    other tropical river systems.
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+<%- include("partials/footer") %>

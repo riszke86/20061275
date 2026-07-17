@@ -1,0 +1,241 @@
+<%- include("partials/header", { pageTitle: zone.name }) %>
+
+
+<!-- ==========================================
+     ZONE HERO
+========================================== -->
+
+<section class="page-hero zone-details-hero">
+
+    <div class="page-hero-content">
+
+        <p class="section-label">
+            Aquarium Zone
+        </p>
+
+        <h1>
+            <%= zone.name %>
+        </h1>
+
+        <p>
+            <%= zone.introduction %>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     ABOUT THE ZONE
+========================================== -->
+
+<section class="zone-about">
+
+    <div class="zone-about-container">
+
+        <div class="zone-about-content">
+
+            <p class="section-label">
+                Explore the Habitat
+            </p>
+
+            <h2>
+                About <%= zone.name %>
+            </h2>
+
+            <p>
+                <%= zone.description %>
+            </p>
+
+        </div>
+
+        <div class="zone-image-placeholder">
+
+            <p>
+                <%= zone.name %> image
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     ZONE EXHIBITS
+========================================== -->
+
+<section class="zone-exhibits">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Featured Exhibits
+        </p>
+
+        <h2>
+            Discover the Exhibits
+        </h2>
+
+        <p class="section-introduction">
+            Explore four unique exhibits within <%= zone.name %>.
+        </p>
+
+    </div>
+
+
+    <div class="zone-exhibits-grid">
+
+        <% zone.exhibits.forEach(exhibit => { %>
+
+            <article class="exhibit-card">
+
+                <div class="exhibit-image-placeholder">
+
+                    <p>
+                        <%= exhibit.name %> image
+                    </p>
+
+                </div>
+
+                <div class="exhibit-card-content">
+
+                    <p class="exhibit-type">
+                        Aquarium Exhibit
+                    </p>
+
+                    <h3>
+                        <%= exhibit.name %>
+                    </h3>
+
+                    <p>
+                        <%= exhibit.description %>
+                    </p>
+
+                </div>
+
+            </article>
+
+        <% }) %>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CONSERVATION
+========================================== -->
+
+<section class="zone-conservation">
+
+    <div class="zone-conservation-content">
+
+        <p class="section-label">
+            Protecting Aquatic Life
+        </p>
+
+        <h2>
+            Conservation and Education
+        </h2>
+
+        <p>
+            <%= zone.conservation %>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     VISITOR INFORMATION
+========================================== -->
+
+<section class="zone-visitor-information">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Visitor Information
+        </p>
+
+        <h2>
+            Before You Explore
+        </h2>
+
+    </div>
+
+    <div class="visitor-information-grid">
+
+        <article class="visitor-information-card">
+
+            <h3>
+                Opening Hours
+            </h3>
+
+            <p>
+                Open daily from 9:00 AM until 6:00 PM.
+            </p>
+
+        </article>
+
+
+        <article class="visitor-information-card">
+
+            <h3>
+                Accessibility
+            </h3>
+
+            <p>
+                The zone includes accessible pathways and viewing areas.
+            </p>
+
+        </article>
+
+
+        <article class="visitor-information-card">
+
+            <h3>
+                Visitor Guidance
+            </h3>
+
+            <p>
+                Please avoid tapping on aquarium glass and follow staff guidance.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     RETURN TO ZONES
+========================================== -->
+
+<section class="zone-return">
+
+    <div class="zone-return-content">
+
+        <h2>
+            Explore Another Aquarium Zone
+        </h2>
+
+        <p>
+            Return to the zones page to discover another aquatic environment.
+        </p>
+
+        <a href="/zones" class="button">
+            View All Zones
+        </a>
+
+    </div>
+
+</section>
+
+
+<%- include("partials/footer") %>
