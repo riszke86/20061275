@@ -1,0 +1,191 @@
+<%- include("partials/header", {
+    pageTitle: exhibit.name
+}) %>
+
+
+<main>
+
+
+    <!-- ================= EXHIBIT HERO ================= -->
+
+    <section
+        class="exhibit-details-hero"
+        style="background-image:
+            linear-gradient(
+                rgba(2, 23, 40, 0.38),
+                rgba(2, 23, 40, 0.9)
+            ),
+            url('<%= exhibit.image %>');"
+    >
+
+        <div class="exhibit-hero-content">
+
+            <p class="section-label">
+                <%= zone.name %>
+            </p>
+
+            <h1>
+                <%= exhibit.name %>
+            </h1>
+
+            <p>
+                <%= exhibit.description %>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT EXHIBIT ================= -->
+
+    <section class="exhibit-about">
+
+        <div class="exhibit-about-container">
+
+            <div class="exhibit-about-image">
+
+                <img
+                    src="<%= exhibit.image %>"
+                    alt="<%= exhibit.name %>"
+                >
+
+            </div>
+
+            <div class="exhibit-about-content">
+
+                <p class="section-label">
+                    Discover the Exhibit
+                </p>
+
+                <h2>
+                    About <%= exhibit.name %>
+                </h2>
+
+                <p>
+                    <%= exhibit.description %>
+                </p>
+
+                <p>
+                    This immersive aquarium exhibit gives visitors
+                    the opportunity to observe aquatic life closely
+                    while learning about habitats, behaviour and
+                    conservation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= VISITOR HIGHLIGHTS ================= -->
+
+    <section class="exhibit-highlights">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                Visitor Experience
+            </p>
+
+            <h2>
+                Exhibit Highlights
+            </h2>
+
+            <p>
+                Learn more about the animals, their environment and
+                the conservation work connected to this exhibit.
+            </p>
+
+        </div>
+
+        <div class="exhibit-highlights-grid">
+
+            <article class="exhibit-highlight-card">
+
+                <h3>
+                    Observe
+                </h3>
+
+                <p>
+                    Watch the animals move, feed and interact within
+                    a carefully designed habitat.
+                </p>
+
+            </article>
+
+            <article class="exhibit-highlight-card">
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    Explore educational displays covering behaviour,
+                    ecosystems and adaptation.
+                </p>
+
+            </article>
+
+            <article class="exhibit-highlight-card">
+
+                <h3>
+                    Protect
+                </h3>
+
+                <p>
+                    Learn how conservation programmes help protect
+                    aquatic wildlife and natural environments.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RETURN LINKS ================= -->
+
+    <section class="exhibit-return">
+
+        <div class="exhibit-return-content">
+
+            <h2>
+                Continue exploring
+            </h2>
+
+            <p>
+                Return to <%= zone.name %> or discover another
+                aquarium zone.
+            </p>
+
+            <div class="exhibit-return-buttons">
+
+                <a
+                    href="/zones/<%= zone.route %>"
+                    class="primary-button"
+                >
+                    Back to <%= zone.name %>
+                </a>
+
+                <a
+                    href="/zones"
+                    class="secondary-button"
+                >
+                    View All Zones
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<%- include("partials/footer") %>

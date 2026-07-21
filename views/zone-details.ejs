@@ -91,36 +91,46 @@
 
         <% zone.exhibits.forEach(exhibit => { %>
 
-            <article class="exhibit-card">
+            <a
+                href="/exhibits/<%= exhibit.route %>"
+                class="exhibit-card-link"
+            >
 
-                <div class="exhibit-image-container">
+                <article class="exhibit-card">
 
-                    <img
-                        src="<%= exhibit.image %>"
-                        alt="<%= exhibit.name %> exhibit"
-                        loading="lazy"
-                    >
+                    <div class="exhibit-image-container">
 
-                </div>
+                        <img
+                            src="<%= exhibit.image %>"
+                            alt="<%= exhibit.name %> exhibit"
+                            loading="lazy"
+                        >
 
-                <div class="exhibit-card-content">
+                    </div>
 
-                    <p class="exhibit-type">
-                        Aquarium Exhibit
-                    </p>
+                    <div class="exhibit-card-content">
 
-                    <h3>
-                        <%= exhibit.name %>
-                    </h3>
+                        <p class="exhibit-type">
+                            Aquarium Exhibit
+                        </p>
 
-                    <p>
-                        <%= exhibit.description %>
-                    </p>
+                        <h3>
+                            <%= exhibit.name %>
+                        </h3>
 
-                </div>
+                        <p>
+                            <%= exhibit.description %>
+                        </p>
 
-            </article>
+                        <span class="exhibit-card-action">
+                            Explore exhibit →
+                        </span>
 
+                    </div>
+
+                </article>
+
+            </a>
         <% }) %>
 
     </div>
