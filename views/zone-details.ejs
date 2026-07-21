@@ -50,11 +50,12 @@
 
         </div>
 
-        <div class="zone-image-placeholder">
+        <div class="zone-image-container">
 
-            <p>
-                <%= zone.name %> image
-            </p>
+            <img
+                src="<%= zone.image %>"
+                alt="<%= zone.name %> aquatic habitat"
+            >
 
         </div>
 
@@ -92,11 +93,13 @@
 
             <article class="exhibit-card">
 
-                <div class="exhibit-image-placeholder">
+                <div class="exhibit-image-container">
 
-                    <p>
-                        <%= exhibit.name %> image
-                    </p>
+                    <img
+                        src="<%= exhibit.image %>"
+                        alt="<%= exhibit.name %> exhibit"
+                        loading="lazy"
+                    >
 
                 </div>
 
