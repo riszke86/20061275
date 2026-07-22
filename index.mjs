@@ -248,7 +248,6 @@ app.get("/exhibits/:exhibitRoute", (req, res) => {
         exhibit: selectedExhibit,
         zone: selectedZone
     });
-
 });
 
 app.get("/faq", (req, res) => {
@@ -256,7 +255,9 @@ app.get("/faq", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-    res.render("contact");
+    res.render("contact", {
+        pageTitle: "Contact"
+    });
 });
 
 

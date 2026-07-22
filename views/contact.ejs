@@ -1,15 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Page</title>
-</head>
+<%- include("partials/header", {
+    pageTitle: "Contact Us"
+}) %>
 
-<body>
+<main>
 
-<h1>This page works!</h1>
+    <!-- ================= CONTACT HERO ================= -->
 
-<a href="/">Back Home</a>
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <p class="section-label">
+                We’re Here to Help
+            </p>
+            <h1>
+                Contact Aquarium World
+            </h1>
+            <p>
+                Have a question about your visit, our marine animals,
+                accessibility or upcoming experiences? Send us a message
+                and our team will respond as soon as possible.
+            </p>
+        </div>
+    </section>
 
-</body>
-</html>
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <section class="contact-section">
+        <div class="contact-container">
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form-panel">
+                <p class="section-label">
+                    Send Us a Message
+                </p>
+                <h2>
+                    How can we help?
+                </h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="full-name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="full-name"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">
+                            Subject
+                        </label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="What is your message about?"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="7"
+                            placeholder="Write your message here"
+                            required
+                        ></textarea>
+
+                    </div>
+                    <button type="submit" class="primary-button">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <aside class="contact-information">
+                <p class="section-label">
+                    Visitor Information
+                </p>
+
+                <h2>
+                    Contact Details
+                </h2>
+
+                <div class="contact-information-card">
+                    <h3>Email</h3>
+                    <a href="mailto:info@aquariumworld.co.uk">
+                        info@aquariumworld.co.uk
+                    </a>
+                </div>
+
+                <div class="contact-information-card">
+
+                    <h3>Telephone</h3>
+
+                    <a href="tel:01908555123">
+                        01908 555 123
+                    </a>
+                </div>
+
+                <div class="contact-information-card">
+
+                    <h3>Address</h3>
+
+                    <address>
+                        Aquarium World<br>
+                        Ocean Way<br>
+                        Milton Keynes<br>
+                        MK1 1AA
+                    </address>
+                </div>
+
+                <div class="contact-information-card">
+
+                    <h3>Opening Hours</h3>
+
+                    <p>
+                        Monday–Sunday<br>
+                        09:00–18:00
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+
+<%- include("partials/footer") %>
