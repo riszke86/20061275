@@ -170,3 +170,164 @@
         order: initial;
     }
 }
+
+/* ==============ABOUT HERO================ */
+
+.about-hero {
+    position: relative;
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 7% 90px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 28, 48, 0.98) 0%,
+            rgba(0, 35, 58, 0.92) 30%,
+            rgba(0, 45, 70, 0.62) 55%,
+            rgba(255, 255, 255, 0.08) 100%
+        ),
+        url("/images/contact-hero.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(850px, 100%);
+}
+
+.about-hero .section-label {
+    margin-bottom: 20px;
+
+    color: #83e7f2;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.about-hero h1 {
+    max-width: 900px;
+    margin: 0 0 34px;
+
+    color: #ffffff;
+
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -5px;
+}
+
+.about-hero-content > p:last-child {
+    max-width: 840px;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 1.45rem;
+    line-height: 1.8;
+}
+
+
+/* ==============ABOUT INTRODUCTION================ */
+
+.about-introduction {
+    padding: 100px 7%;
+    background: #f4f9fb;
+}
+
+.about-introduction-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-introduction .section-label {
+    margin-bottom: 16px;
+    color: #087f91;
+}
+
+.about-introduction h2 {
+    margin: 0 auto 30px;
+    color: #062f42;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.15;
+}
+
+.about-introduction p {
+    margin: 0 auto 20px;
+    color: #526571;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* ==============ABOUT RESPONSIVE================ */
+
+@media (max-width: 900px) {
+
+    .about-hero {
+        min-height: 600px;
+        padding-top: 100px;
+
+        background-position: 58% center;
+    }
+
+    .about-hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .about-hero-content > p:last-child {
+        max-width: 650px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .about-hero {
+        min-height: 560px;
+        padding: 90px 24px 60px;
+
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(0, 28, 48, 0.97) 0%,
+                rgba(0, 35, 58, 0.87) 65%,
+                rgba(0, 40, 65, 0.55) 100%
+            ),
+            url("/images/contact-hero.png");
+
+        background-position: 55% center;
+    }
+
+    .about-hero .section-label {
+        font-size: 0.85rem;
+        letter-spacing: 4px;
+    }
+
+    .about-hero h1 {
+        margin-bottom: 24px;
+        font-size: clamp(3.2rem, 16vw, 5rem);
+        letter-spacing: -2px;
+    }
+
+    .about-hero-content > p:last-child {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .about-introduction {
+        padding: 70px 24px;
+    }
+}

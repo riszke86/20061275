@@ -189,7 +189,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-    res.render("about");
+    res.render("about", {
+        pageTitle: "About Us"
+    });
 });
 
 app.get("/zones", (req, res) => {
