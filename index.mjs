@@ -5,6 +5,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+import connection from "./database/database.mjs";
 
 
 // ======================================
@@ -257,8 +258,122 @@ app.get("/faq", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-    res.render("contact", {
-        pageTitle: "Contact"
+    const sql = `
+        SELECT *
+        FROM contact_details
+        WHERE id = ?
+    `;
+
+    connection.get(sql, [1], (error, contactDetails) => {
+        if (error) {
+            console.error(
+                "Could not load contact details:",
+                error.message
+            );
+
+            return res.status(500).send(
+                "The contact page could not be loaded."
+            );
+        }
+
+        res.render("contact", {
+            pageTitle: "Contact Us",
+            contactDetails,
+            messageSent: req.query.sent === "true",
+            formError: null,
+            formData: {}
+        });
+    });
+});
+
+app.post("/contact", (req, res) => {
+    const {
+        fullName,
+        email,
+        subject,
+        message
+    } = req.body;
+
+    const cleanedFullName = fullName?.trim();
+    const cleanedEmail = email?.trim();
+    const cleanedSubject = subject?.trim();
+    const cleanedMessage = message?.trim();
+
+    if (
+        !cleanedFullName ||
+        !cleanedEmail ||
+        !cleanedSubject ||
+        !cleanedMessage
+    ) {
+        const sql = `
+            SELECT *
+            FROM contact_details
+            WHERE id = ?
+        `;
+
+        return connection.get(sql, [1], (error, contactDetails) => {
+            if (error) {
+                console.error(
+                    "Could not reload contact details:",
+                    error.message
+                );
+
+                return res.status(500).send(
+                    "The contact page could not be loaded."
+                );
+            }
+
+            return res.status(400).render("contact", {
+                pageTitle: "Contact Us",
+                contactDetails,
+                messageSent: false,
+                formError: "Please complete all required fields.",
+                formData: {
+                    fullName: cleanedFullName || "",
+                    email: cleanedEmail || "",
+                    subject: cleanedSubject || "",
+                    message: cleanedMessage || ""
+                }
+            });
+        });
+    }
+
+    const sql = `
+        INSERT INTO contact_messages (
+            full_name,
+            email,
+            telephone,
+            subject,
+            message
+        )
+        VALUES (?, ?, ?, ?, ?)
+    `;
+
+    const values = [
+        cleanedFullName,
+        cleanedEmail,
+        null,
+        cleanedSubject,
+        cleanedMessage
+    ];
+
+    connection.run(sql, values, function (error) {
+        if (error) {
+            console.error(
+                "Could not save contact message:",
+                error.message
+            );
+
+            return res.status(500).send(
+                "Your message could not be submitted."
+            );
+        }
+
+        console.log(
+            `Contact message saved. Message ID: ${this.lastID}`
+        );
+
+        res.redirect("/contact?sent=true");
     });
 });
 
