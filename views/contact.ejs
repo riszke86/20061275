@@ -56,7 +56,12 @@
 
                 <% } %>
 
-                <form class="contact-form" method="POST" action="/contact">
+                <form 
+                    class="contact-form"
+                    id="contactForm"
+                    method="POST"
+                    action="/contact"
+                >
                     <div class="form-group">
                         <label for="full-name">
                             Full Name
@@ -127,9 +132,44 @@
                         ><%= formData.message || '' %></textarea>
 
                     </div>
-                    <button type="submit" class="contact-btn">
+                    <div
+                        class="contact-loader"
+                        id="contactLoader"
+                        aria-live="polite"
+                        aria-hidden="true"
+                    >
+                        <div class="fish-animation">
+                            <span class="loader-bubble bubble-one"></span>
+                            <span class="loader-bubble bubble-two"></span>
+                            <span class="loader-bubble bubble-three"></span>
+                            <span class="loader-bubble bubble-four"></span>
+
+                            <div class="fish-orbit">
+                                <div class="fish-orbit-arm">
+                                    <div class="fish-bob">
+                                        <img
+                                            src="/images/happyfish.png"
+                                            alt=""
+                                            class="loading-fish"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+
+                    <p>Sending your message...</p>
+                </div>
+
+                <button
+                    type="submit"
+                    class="contact-btn"
+                    id="contactSubmitButton"
+                >
+                    <span class="contact-button-text">
                         Send Message
-                    </button>
+                    </span>
+                </button>
                 </form>
             </div>
 
@@ -187,4 +227,5 @@
     </section>
 </main>
 
+<script src="/js/contact.js" defer></script>
 <%- include("partials/footer") %>

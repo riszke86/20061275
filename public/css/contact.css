@@ -313,6 +313,178 @@
     }
 }
 
+/* ================= CONTACT LOADER ================= */
+
+.contact-loader {
+    display: none;
+    justify-items: center;
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.contact-loader.is-visible {
+    display: grid;
+}
+
+.fish-animation {
+    position: relative;
+
+    width: 120px;
+    height: 100px;
+}
+
+.fish-orbit {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 52px;
+    height: 52px;
+
+    transform: translate(-50%, -50%);
+}
+
+.fish-orbit-arm {
+    position: absolute;
+    inset: 0;
+
+    animation: fishCircle 3s linear infinite;
+}
+
+.fish-bob {
+    position: absolute;
+
+    top: -7px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    animation: fishFloat 1.2s ease-in-out infinite;
+}
+
+.loading-fish {
+    display: block;
+    width: 24px;
+    height: auto;
+
+    transform-origin: center;
+
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+
+/* ================= BUBBLES ================= */
+
+.loader-bubble {
+    position: absolute;
+
+    bottom: 15px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.55);
+
+    opacity: 0;
+
+    animation: bubbleRise 3s infinite ease-in;
+}
+
+.bubble-one {
+    left: 15px;
+
+    width: 7px;
+    height: 7px;
+
+    animation-delay: 0s;
+}
+
+.bubble-two {
+    left: 40px;
+
+    width: 10px;
+    height: 10px;
+
+    animation-delay: .8s;
+}
+
+.bubble-three {
+    right: 20px;
+
+    width: 6px;
+    height: 6px;
+
+    animation-delay: 1.4s;
+}
+
+.bubble-four {
+    right: 5px;
+
+    width: 9px;
+    height: 9px;
+
+    animation-delay: .4s;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fishCircle {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes fishFloat {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-4px);
+    }
+
+}
+
+@keyframes bubbleRise {
+
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(.5);
+    }
+
+    20% {
+        opacity: .9;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-70px) scale(1.1);
+    }
+
+}
+
 /* ============CONTACT BUTTON================ */
 
 .contact-btn {
