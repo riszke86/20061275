@@ -282,31 +282,291 @@
 
 <!-- ============== OPENING TIMES ========================= -->
 
-<section class="opening-times">
+<section class="opening-times" id="openingTimes">
 
-    <div class="section-heading">
+    <div class="opening-times-container">
 
-        <h2>
-            Opening Times
-        </h2>
+        <!-- CURRENT VISITOR STATUS -->
 
-    </div>
+        <div class="visit-status-panel">
 
-    <div class="opening-times-card">
+            <div class="opening-status-badge" id="openingStatusBadge">
+                <span class="status-indicator"></span>
+                <span id="openingStatusText">Checking status...</span>
+            </div>
 
-        <h3>Open Every Day</h3>
+            <p class="current-day" id="currentDay">
+                Today
+            </p>
 
-        <p>
-            <strong>9:00 AM – 6:00 PM</strong>
-        </p>
+            <h2 class="current-hours" id="currentHours">
+                09:00 – 18:00
+            </h2>
 
-        <p>
-            Last admission is at 5:00 PM.
-        </p>
+            <p class="last-admission">
+                Last admission at 17:00
+            </p>
 
-        <a href="/contact" class="button">
-            Contact Us
-        </a>
+            <div class="next-event" id="nextEvent">
+
+                <p class="next-event-label">
+                    Next event
+                </p>
+
+                <p class="next-event-details" id="nextEventDetails">
+                    Loading today's schedule...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECTION HEADING -->
+
+        <div class="section-heading opening-times-heading">
+
+            <p class="section-label">
+                Plan Your Visit
+            </p>
+
+            <h2>
+                Opening Times
+            </h2>
+
+            <p class="section-introduction">
+                We are open every day. Select a day to view its scheduled
+                talks, feeding sessions and marine experiences.
+            </p>
+
+        </div>
+
+
+        <!-- WEEKLY OPENING TIMES -->
+
+        <div class="opening-schedule">
+
+            <div class="schedule-header" aria-hidden="true">
+                <span>Day</span>
+                <span>Open</span>
+                <span>Close</span>
+                <span></span>
+            </div>
+
+            <div class="schedule-days" id="scheduleDays">
+
+                <article class="schedule-day" data-day="monday">
+
+                    <button
+                        class="schedule-day-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span class="schedule-day-name">Monday</span>
+                        <span>09:00</span>
+                        <span>18:00</span>
+                        <span class="schedule-arrow">+</span>
+                    </button>
+
+                    <div class="day-events">
+                        <div class="day-events-content">
+                            <h3>Monday Events</h3>
+
+                            <ul>
+                                <li><time>10:00</time> Coral Reef Discovery Talk</li>
+                                <li><time>11:30</time> Penguin Feeding</li>
+                                <li><time>13:00</time> Shark Encounter</li>
+                                <li><time>14:30</time> Sea Turtle Rescue Talk</li>
+                                <li><time>16:00</time> Ray Lagoon Experience</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="schedule-day" data-day="tuesday">
+
+                    <button
+                        class="schedule-day-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span class="schedule-day-name">Tuesday</span>
+                        <span>09:00</span>
+                        <span>18:00</span>
+                        <span class="schedule-arrow">+</span>
+                    </button>
+
+                    <div class="day-events">
+                        <div class="day-events-content">
+                            <h3>Tuesday Events</h3>
+
+                            <ul>
+                                <li><time>10:00</time> Tropical Fish Talk</li>
+                                <li><time>11:30</time> Penguin Feeding</li>
+                                <li><time>13:00</time> Deep Sea Discovery</li>
+                                <li><time>14:30</time> Sea Turtle Rescue Talk</li>
+                                <li><time>16:00</time> Shark Encounter</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="schedule-day" data-day="wednesday">
+
+                    <button
+                        class="schedule-day-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span class="schedule-day-name">Wednesday</span>
+                        <span>09:00</span>
+                        <span>18:00</span>
+                        <span class="schedule-arrow">+</span>
+                    </button>
+
+                    <div class="day-events">
+                        <div class="day-events-content">
+                            <h3>Wednesday Events</h3>
+
+                            <ul>
+                                <li><time>10:00</time> Coral Conservation Talk</li>
+                                <li><time>11:30</time> Rockpool Discovery</li>
+                                <li><time>13:00</time> Penguin Feeding</li>
+                                <li><time>14:30</time> Jellyfish Experience</li>
+                                <li><time>16:00</time> Shark Encounter</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="schedule-day" data-day="thursday">
+
+                    <button
+                        class="schedule-day-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span class="schedule-day-name">Thursday</span>
+                        <span>09:00</span>
+                        <span>18:00</span>
+                        <span class="schedule-arrow">+</span>
+                    </button>
+
+                    <div class="day-events">
+                        <div class="day-events-content">
+                            <h3>Thursday Events</h3>
+
+                            <ul>
+                                <li><time>10:00</time> Rainforest Rivers Talk</li>
+                                <li><time>11:30</time> Penguin Feeding</li>
+                                <li><time>13:00</time> Crocodile Feeding</li>
+                                <li><time>14:30</time> Sea Turtle Rescue Talk</li>
+                                <li><time>16:00</time> Ray Lagoon Experience</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="schedule-day" data-day="friday">
+
+                    <button
+                        class="schedule-day-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span class="schedule-day-name">Friday</span>
+                        <span>09:00</span>
+                        <span>18:00</span>
+                        <span class="schedule-arrow">+</span>
+                    </button>
+
+                    <div class="day-events">
+                        <div class="day-events-content">
+                            <h3>Friday Events</h3>
+
+                            <ul>
+                                <li><time>10:00</time> Tropical Fish Talk</li>
+                                <li><time>11:30</time> Penguin Feeding</li>
+                                <li><time>13:00</time> Shark Encounter</li>
+                                <li><time>14:30</time> Ocean Conservation Talk</li>
+                                <li><time>16:00</time> Deep Sea Discovery</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="schedule-day" data-day="saturday">
+
+                    <button
+                        class="schedule-day-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span class="schedule-day-name">Saturday</span>
+                        <span>09:00</span>
+                        <span>18:00</span>
+                        <span class="schedule-arrow">+</span>
+                    </button>
+
+                    <div class="day-events">
+                        <div class="day-events-content">
+                            <h3>Saturday Events</h3>
+
+                            <ul>
+                                <li><time>10:00</time> Coral Reef Discovery Talk</li>
+                                <li><time>11:30</time> Penguin Feeding</li>
+                                <li><time>13:00</time> Shark Encounter</li>
+                                <li><time>14:30</time> Sea Turtle Rescue Talk</li>
+                                <li><time>16:00</time> Ray Lagoon Experience</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <article class="schedule-day" data-day="sunday">
+
+                    <button
+                        class="schedule-day-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span class="schedule-day-name">Sunday</span>
+                        <span>09:00</span>
+                        <span>18:00</span>
+                        <span class="schedule-arrow">+</span>
+                    </button>
+
+                    <div class="day-events">
+                        <div class="day-events-content">
+                            <h3>Sunday Events</h3>
+
+                            <ul>
+                                <li><time>10:00</time> Family Rockpool Discovery</li>
+                                <li><time>11:30</time> Penguin Feeding</li>
+                                <li><time>13:00</time> Deep Sea Discovery</li>
+                                <li><time>14:30</time> Sea Turtle Rescue Talk</li>
+                                <li><time>16:00</time> Shark Encounter</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -390,5 +650,7 @@
     </div>
 
 </section>
+
+<script src="/js/script.js"></script>
 
 <%- include("partials/footer") %>

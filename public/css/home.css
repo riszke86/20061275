@@ -204,3 +204,404 @@
 .zone-card:hover img {
     transform: scale(1.07);
 }
+
+
+/* ==================================================
+   OPENING TIMES
+================================================== */
+
+.opening-times {
+    padding: 110px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 180, 216, 0.13),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #03283b,
+            #021728
+        );
+}
+
+.opening-times-container {
+    width: min(1150px, 92%);
+    margin: 0 auto;
+}
+
+
+/* ================= CURRENT STATUS ================= */
+
+.visit-status-panel {
+    position: relative;
+
+    width: min(760px, 100%);
+    margin: 0 auto 100px;
+    padding: 45px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(144, 224, 239, 0.2);
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(73, 214, 232, 0.2),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(7, 80, 96, 0.94),
+            rgba(3, 40, 58, 0.96)
+        );
+
+    text-align: center;
+
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.3);
+}
+
+.opening-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 24px;
+    padding: 10px 18px;
+
+    border: 1px solid rgba(121, 232, 182, 0.35);
+    border-radius: 999px;
+
+    background: rgba(47, 195, 126, 0.1);
+
+    color: #9af0c4;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.opening-status-badge.is-closed {
+    border-color: rgba(255, 151, 151, 0.35);
+    background: rgba(209, 70, 70, 0.12);
+    color: #ffb0b0;
+}
+
+.status-indicator {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+    background: currentColor;
+
+    box-shadow: 0 0 14px currentColor;
+}
+
+.current-day {
+    margin-bottom: 8px;
+
+    color: #90e0ef;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.current-hours {
+    margin-bottom: 10px;
+
+    color: white;
+
+    font-size: clamp(2.5rem, 7vw, 4.8rem);
+    line-height: 1;
+}
+
+.last-admission {
+    color: #b9d8df;
+    font-size: 16px;
+}
+
+.next-event {
+    width: min(520px, 100%);
+    margin: 32px auto 0;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(144, 224, 239, 0.2);
+}
+
+.next-event-label {
+    margin-bottom: 8px;
+
+    color: #90e0ef;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.next-event-details {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 650;
+}
+
+
+/* ================= SECTION HEADING ================= */
+
+.opening-times-heading {
+    margin-bottom: 55px;
+}
+
+
+/* ================= SCHEDULE ================= */
+
+.opening-schedule {
+    overflow: hidden;
+
+    border: 1px solid rgba(144, 224, 239, 0.18);
+    border-radius: 26px;
+
+    background: rgba(4, 38, 55, 0.84);
+
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.28);
+}
+
+.schedule-header,
+.schedule-day-button {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 42px;
+    align-items: center;
+}
+
+.schedule-header {
+    padding: 25px 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087180,
+            #075365
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.schedule-day {
+    border-bottom: 1px solid rgba(144, 224, 239, 0.1);
+}
+
+.schedule-day:last-child {
+    border-bottom: 0;
+}
+
+.schedule-day-button {
+    width: 100%;
+    padding: 25px 32px;
+
+    border: 0;
+    background: transparent;
+
+    color: #dceff3;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 17px;
+    text-align: left;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.schedule-day-button:hover {
+    background: rgba(55, 187, 207, 0.08);
+    color: white;
+}
+
+.schedule-day-name {
+    color: white;
+    font-weight: 750;
+}
+
+.schedule-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid rgba(144, 224, 239, 0.24);
+    border-radius: 50%;
+
+    color: #90e0ef;
+
+    font-size: 22px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.schedule-day.is-active .schedule-arrow {
+    transform: rotate(45deg);
+    background: rgba(144, 224, 239, 0.12);
+}
+
+.schedule-day.is-today .schedule-day-button {
+    background: rgba(69, 202, 220, 0.1);
+}
+
+.schedule-day.is-today .schedule-day-name::after {
+    margin-left: 12px;
+    padding: 5px 9px;
+
+    border-radius: 999px;
+    background: rgba(144, 224, 239, 0.13);
+
+    color: #90e0ef;
+
+    content: "Today";
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* ================= EVENTS ACCORDION ================= */
+
+.day-events {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 97, 112, 0.55),
+            rgba(4, 58, 74, 0.68)
+        );
+
+    transition: grid-template-rows 0.35s ease;
+}
+
+.schedule-day.is-active .day-events {
+    grid-template-rows: 1fr;
+}
+
+.day-events-content {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.day-events-content h3 {
+    margin: 0;
+    padding: 28px 32px 8px;
+
+    color: white;
+    font-size: 22px;
+}
+
+.day-events-content ul {
+    margin: 0;
+    padding: 8px 32px 30px;
+
+    list-style: none;
+}
+
+.day-events-content li {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+
+    padding: 11px 0;
+
+    color: #d9eef2;
+    font-size: 16px;
+
+    border-bottom: 1px solid rgba(144, 224, 239, 0.08);
+}
+
+.day-events-content li:last-child {
+    border-bottom: 0;
+}
+
+.day-events-content time {
+    color: #90e0ef;
+    font-weight: 750;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 700px) {
+
+    .opening-times {
+        padding: 80px 20px;
+    }
+
+    .visit-status-panel {
+        margin-bottom: 75px;
+        padding: 35px 22px;
+    }
+
+    .schedule-header {
+        display: none;
+    }
+
+    .schedule-day-button {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+
+        padding: 22px;
+    }
+
+    .schedule-day-button > span:nth-child(2),
+    .schedule-day-button > span:nth-child(3) {
+        display: none;
+    }
+
+    .schedule-day-name::before {
+        display: block;
+
+        margin-bottom: 6px;
+
+        color: #90e0ef;
+
+        content: "09:00 – 18:00";
+
+        font-size: 12px;
+        font-weight: 650;
+        letter-spacing: 0.5px;
+    }
+
+    .schedule-day.is-today .schedule-day-name::after {
+        display: inline-block;
+    }
+
+    .day-events-content h3 {
+        padding: 25px 22px 8px;
+    }
+
+    .day-events-content ul {
+        padding: 8px 22px 25px;
+    }
+
+    .day-events-content li {
+        grid-template-columns: 62px 1fr;
+        gap: 12px;
+
+        font-size: 14px;
+    }
+}
