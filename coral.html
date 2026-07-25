@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coral Cove | WildHeart Eco Park</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+<header class="habitat-hero">
+    <video autoplay muted loop playsinline>
+        <source src="styles/coral8min.mp4" type="video/mp4">
+    </video>
+
+    <div class="habitat-hero-text">
+        <h1>Coral Cove</h1>
+        <p>Dive beneath the waves and discover colourful reefs, graceful sea creatures and extraordinary marine life.</p>
+    </div>
+</header>
+
+<section class="habitat-page">
+
+    <h2>About This Habitat</h2>
+
+<div class="about-section">
+
+    <div class="about-text">
+        <p>
+            Coral Cove recreates the beauty and biodiversity of tropical coral reefs. Visitors can explore colourful
+            fish, sharks, rays, sea turtles, seahorses and other marine species while learning how coral ecosystems
+            support ocean life and why protecting the world's seas is essential.
+        </p>
+    </div>
+
+    <div class="fact-grid">
+
+    <div class="fact-card">
+        <span>🌊</span>
+        <h3>Habitat</h3>
+        <p>Tropical Coral Reef</p>
+    </div>
+
+    <div class="fact-card">
+        <span>📍</span>
+        <h3>Origin</h3>
+        <p>Warm Oceans Worldwide</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🌡️</span>
+        <h3>Water Temperature</h3>
+        <p>24–28°C</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🐠</span>
+        <h3>Fish Species</h3>
+        <p>80+</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🪸</span>
+        <h3>Coral Species</h3>
+        <p>35+</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🐢</span>
+        <h3>Rescued Turtles</h3>
+        <p>6 Residents</p>
+    </div>
+
+    <div class="fact-card">
+        <span>💧</span>
+        <h3>Water Volume</h3>
+        <p>1.2 Million Litres</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🦈</span>
+        <h3>Marine Predators</h3>
+        <p>12 Species</p>
+    </div>
+
+</div>
+
+</div>
+
+    <h2>Experiences</h2>
+
+    <div class="experience-grid">
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/reef.png" alt="Coral Reef Discovery">
+        </div>
+
+        <div class="experience-content">
+            <h3>Coral Reef Discovery</h3>
+            <p>Explore a vibrant reef filled with colourful fish, living coral and hidden marine life.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Coral Reef Discovery', 'styles/reef.png', '25 minutes', 'Interactive reef displays', 'Educational', 'Discover how coral reefs form, why they support so many species and what threatens their survival.')">Learn More →</a>
+        </div>
+    </div>
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/tunnel.png" alt="Ocean Tunnel">
+        </div>
+
+        <div class="experience-content">
+            <h3>Ocean Tunnel</h3>
+            <p>Walk beneath sharks, rays and schools of fish in our panoramic underwater tunnel.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Ocean Tunnel', 'styles/tunnel.png', '20 minutes', 'Panoramic underwater walkway', 'Easy', 'Experience marine life from every direction as sharks, rays and tropical fish glide above and around you.')">Learn More →</a>
+        </div>
+    </div>
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/jellyfish.png" alt="Jellyfish Glow Zone">
+        </div>
+
+        <div class="experience-content">
+            <h3>Jellyfish Glow Zone</h3>
+            <p>Watch delicate jellyfish drift through softly illuminated water displays.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Jellyfish Glow Zone', 'styles/jellyfish.png', '15 minutes', 'Low-light display area', 'Calm', 'Observe the graceful movement of jellyfish and learn how these ancient animals survive without bones, hearts or brains.')">Learn More →</a>
+        </div>
+    </div>
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/touchpool.png" alt="Rockpool Discovery">
+        </div>
+
+        <div class="experience-content">
+            <h3>Rockpool Discovery</h3>
+            <p>Meet gentle coastal creatures and learn how they survive changing tides.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Rockpool Discovery', 'styles/touchpool.png', '20 minutes', 'Supervised interactive session', 'Family friendly', 'Discover starfish, crabs and other coastal animals with guidance from our marine education team.')">Learn More →</a>
+        </div>
+    </div>
+</div>
+
+<section class="animal-stars">
+    <h2>Meet Our Ocean Stars</h2>
+    <p>Click an animal to discover fascinating facts about our marine residents.</p>
+
+    <div class="animal-grid">
+
+    <div class="animal-card" onclick="openAnimal('Clownfish', 'styles/clownfish.png', 'Clownfish live among sea anemones and are protected by a special mucus coating on their skin.', 'Algae, plankton and small crustaceans', 'Warm coral reefs', '6–10 years', 'Least Concern')">
+        <img src="styles/clownfish.png" alt="Clownfish">
+        <h3>Clownfish</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Green Sea Turtle', 'styles/seaturtle.png', 'Green sea turtles are powerful swimmers that travel long distances between feeding and nesting areas.', 'Seagrass and algae', 'Tropical and subtropical seas', '60–80 years', 'Endangered')">
+        <img src="styles/seaturtle.png" alt="Green Sea Turtle">
+        <h3>Green Sea Turtle</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Blacktip Reef Shark', 'styles/shark.png', 'Blacktip reef sharks are active coastal predators recognised by the dark markings on their fins.', 'Fish, squid and crustaceans', 'Shallow coral reefs', '12–15 years', 'Vulnerable')">
+        <img src="styles/shark.png" alt="Blacktip Reef Shark">
+        <h3>Blacktip Reef Shark</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Spotted Eagle Ray', 'styles/ray.png', 'Spotted eagle rays glide through the water using broad wing-like fins and often search sandy areas for food.', 'Molluscs, crabs and small fish', 'Coastal reefs and lagoons', '20–25 years', 'Endangered')">
+        <img src="styles/ray.png" alt="Spotted Eagle Ray">
+        <h3>Spotted Eagle Ray</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Giant Pacific Octopus', 'styles/octopus.png', 'Octopuses are highly intelligent animals capable of solving problems, changing colour and squeezing through narrow spaces.', 'Crabs, shellfish and fish', 'Rocky coastal waters', '3–5 years', 'Least Concern')">
+        <img src="styles/octopus.png" alt="Giant Pacific Octopus">
+        <h3>Giant Pacific Octopus</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Long-Snouted Seahorse', 'styles/seahorse.png', 'Seahorses use curled tails to hold onto plants, and males carry developing young in a special pouch.', 'Tiny crustaceans and plankton', 'Seagrass beds and sheltered reefs', '1–5 years', 'Data Deficient')">
+        <img src="styles/seahorse.png" alt="Long-Snouted Seahorse">
+        <h3>Long-Snouted Seahorse</h3>
+    </div>
+
+</div>
+</section>
+
+<div id="animal-modal" class="animal-modal">
+    <div class="animal-modal-content">
+        <span class="close-modal" onclick="closeAnimal()">&times;</span>
+
+        <img id="modal-image" src="" alt="Animal image">
+
+        <div class="modal-info">
+            <h2 id="modal-title"></h2>
+            <p id="modal-text"></p>
+
+            <div class="animal-facts">
+                <div><strong>Diet</strong><p id="modal-diet"></p></div>
+                <div><strong>Habitat</strong><p id="modal-habitat"></p></div>
+                <div><strong>Lifespan</strong><p id="modal-lifespan"></p></div>
+                <div><strong>Status</strong><p id="modal-status"></p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="conservation-box">
+    <h2>Conservation Message</h2>
+    <p>
+        Coral reefs support thousands of marine species but are threatened by warming oceans, pollution,
+        overfishing and plastic waste. This habitat teaches visitors how responsible choices, cleaner oceans
+        and marine conservation projects can help protect life beneath the waves.
+    </p>
+</div>
+
+<section class="impact-section">
+    <h2>Conservation Impact</h2>
+
+    <div class="impact-grid">
+        <div class="impact-card">
+            <h3 class="counter" data-target="5400">0</h3>
+            <p>Coral fragments restored</p>
+        </div>
+
+        <div class="impact-card">
+            <h3 class="counter" data-target="68">0</h3>
+            <p>Marine animals rescued</p>
+        </div>
+
+        <div class="impact-card">
+            <h3 class="counter" data-target="2650">0</h3>
+            <p>Visitors educated</p>
+        </div>
+    </div>
+</section>
+
+<section class="visitor-tips">
+    <h2>Visitor Tips</h2>
+
+    <ul>
+        <li>Best time to visit: During afternoon feeding sessions</li>
+        <li>Allow 45–60 minutes</li>
+        <li>Wheelchair accessible</li>
+        <li>Marine talks included in admission</li>
+    </ul>
+</section>
+
+<section class="rainforest-gallery">
+    <h2>Ocean Gallery</h2>
+
+    <div class="gallery-grid">
+        <img src="styles/reef.png" alt="Coral reef" onclick="openGallery(this.src)">
+        <img src="styles/tunnel.png" alt="Ocean tunnel" onclick="openGallery(this.src)">
+        <img src="styles/clownfish.png" alt="Clownfish" onclick="openGallery(this.src)">
+        <img src="styles/seaturtle.png" alt="Green sea turtle" onclick="openGallery(this.src)">
+        <img src="styles/shark.png" alt="Blacktip reef shark" onclick="openGallery(this.src)">
+        <img src="styles/ray.png" alt="Spotted eagle ray" onclick="openGallery(this.src)">
+    </div>
+</section>
+
+<div id="gallery-modal" class="gallery-modal" onclick="closeGallery()">
+    <span class="gallery-close">&times;</span>
+    <img id="gallery-large-image" src="" alt="Large gallery image">
+</div>
+
+<section class="habitat-navigation">
+
+    <a class="nav-card previous" href="/reptile">
+        <span class="nav-arrow">←</span>
+        <div>
+            <small>Previous Habitat</small>
+            <h3>Reptile Realm</h3>
+        </div>
+    </a>
+
+    <a class="nav-card next" href="/">
+        <div>
+            <small>Return to</small>
+            <h3>Home</h3>
+        </div>
+        <span class="nav-arrow">→</span>
+    </a>
+
+</section>
+
+</section>
+
+<script src="scripts/script.js"></script>
+
+<div id="experience-modal" class="experience-modal">
+    <div class="experience-modal-content">
+        <span class="close-modal" onclick="closeExperience()">&times;</span>
+
+        <img id="experience-image" src="" alt="Experience image">
+
+        <div class="experience-modal-info">
+            <h2 id="experience-title"></h2>
+
+            <div class="experience-details">
+                <p><strong>Duration:</strong> <span id="experience-duration"></span></p>
+                <p><strong>Information:</strong> <span id="experience-info"></span></p>
+                <p><strong>Difficulty:</strong> <span id="experience-difficulty"></span></p>
+            </div>
+
+            <p id="experience-description"></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

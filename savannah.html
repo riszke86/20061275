@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardians of the Savannah | WildHeart Eco Park</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+<header class="habitat-hero">
+    <video autoplay muted loop playsinline>
+        <source src="styles/savannah15min.mp4" type="video/mp4">
+    </video>
+
+    <div class="habitat-hero-text">
+        <h1>Guardians of the Savannah</h1>
+        <p>Step into the African grasslands and discover powerful predators, gentle giants and remarkable wildlife.</p>
+    </div>
+</header>
+
+<section class="habitat-page">
+
+    <h2>About This Habitat</h2>
+
+<div class="about-section">
+
+    <div class="about-text">
+        <p>
+            Guardians of the Savannah is inspired by the vast grasslands of Africa, where some of the world's most
+            recognisable animals live together. Visitors can observe lions, elephants, giraffes, zebras and other
+            remarkable species while learning about conservation, migration and the importance of protecting
+            endangered wildlife.
+        </p>
+    </div>
+
+    <div class="fact-grid">
+
+    <div class="fact-card">
+        <span>🌍</span>
+        <h3>Habitat</h3>
+        <p>African Savannah</p>
+    </div>
+
+    <div class="fact-card">
+        <span>📍</span>
+        <h3>Origin</h3>
+        <p>Sub-Saharan Africa</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🌡️</span>
+        <h3>Climate</h3>
+        <p>20–30°C</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🌾</span>
+        <h3>Landscape</h3>
+        <p>Open Grasslands</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🦁</span>
+        <h3>Large Mammals</h3>
+        <p>30+ Species</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🐘</span>
+        <h3>Elephant Herd</h3>
+        <p>8 Residents</p>
+    </div>
+
+    <div class="fact-card">
+        <span>☀️</span>
+        <h3>Dry Season</h3>
+        <p>May–October</p>
+    </div>
+
+    <div class="fact-card">
+        <span>🦓</span>
+        <h3>Grazing Animals</h3>
+        <p>50+ Residents</p>
+    </div>
+
+</div>
+
+</div>
+
+    <h2>Experiences</h2>
+
+    <div class="experience-grid">
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/safari.png" alt="Savannah Safari Tour">
+        </div>
+
+        <div class="experience-content">
+            <h3>Savannah Safari Tour</h3>
+            <p>Travel through the grasslands and observe iconic African animals in a spacious habitat.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Savannah Safari Tour', 'styles/safari.png', '30 minutes', 'Guided vehicle experience', 'Easy', 'Explore the open savannah with trained guides and observe grazing animals, predators and natural behaviours.')">Learn More →</a>
+        </div>
+    </div>
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/elephant.png" alt="Elephant Feeding Experience">
+        </div>
+
+        <div class="experience-content">
+            <h3>Elephant Feeding Experience</h3>
+            <p>Watch our elephant herd during feeding time and learn about their care and behaviour.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Elephant Feeding Experience', 'styles/elephant.png', '20 minutes', 'Daily feeding demonstration', 'Family friendly', 'Meet our elephant care team and discover how elephants communicate, eat and support one another within the herd.')">Learn More →</a>
+        </div>
+    </div>
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/lion.png" alt="Lion Encounter">
+        </div>
+
+        <div class="experience-content">
+            <h3>Lion Encounter</h3>
+            <p>Observe the pride from a safe viewing area and learn how lions live and hunt together.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Lion Encounter', 'styles/lion.png', '20 minutes', 'Keeper talk included', 'Educational', 'Discover the social structure of a lion pride and learn about the conservation challenges facing wild lions.')">Learn More →</a>
+        </div>
+    </div>
+
+    <div class="experience-card">
+        <div class="experience-image">
+            <img src="styles/giraffe.png" alt="Giraffe Lookout">
+        </div>
+
+        <div class="experience-content">
+            <h3>Giraffe Lookout</h3>
+            <p>Stand at treetop height and watch giraffes browse leaves from the elevated platform.</p>
+            <a href="#" class="learn-more" onclick="openExperience('Giraffe Lookout', 'styles/giraffe.png', '15 minutes', 'Elevated viewing platform', 'Easy', 'See giraffes at eye level and learn how their height, tongues and markings help them survive in the savannah.')">Learn More →</a>
+        </div>
+    </div>
+</div>
+
+<section class="animal-stars">
+    <h2>Meet Our Savannah Stars</h2>
+    <p>Click an animal to discover fascinating facts about our savannah residents.</p>
+
+    <div class="animal-grid">
+
+    <div class="animal-card" onclick="openAnimal('African Lion', 'styles/lion.png', 'African lions are highly social big cats that live in groups called prides.', 'Meat', 'Open grasslands and woodland', '10–14 years', 'Vulnerable')">
+        <img src="styles/lion.png" alt="African Lion">
+        <h3>African Lion</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('African Elephant', 'styles/elephant.png', 'African elephants are the largest land animals and use their trunks for feeding, drinking and communication.', 'Grass, leaves, bark and fruit', 'Savannah and woodland', '60–70 years', 'Endangered')">
+        <img src="styles/elephant.png" alt="African Elephant">
+        <h3>African Elephant</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Giraffe', 'styles/giraffe.png', 'Giraffes are the tallest land animals and use their long necks to reach leaves high in trees.', 'Leaves, shoots and flowers', 'Open woodland and savannah', '20–25 years', 'Vulnerable')">
+        <img src="styles/giraffe.png" alt="Giraffe">
+        <h3>Giraffe</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Plains Zebra', 'styles/zebra.png', 'Every zebra has a unique pattern of black and white stripes, similar to a human fingerprint.', 'Grass and leaves', 'Grasslands and open plains', '20–25 years', 'Near Threatened')">
+        <img src="styles/zebra.png" alt="Plains Zebra">
+        <h3>Plains Zebra</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Black Rhinoceros', 'styles/rhino.png', 'Black rhinoceroses are powerful browsers with hooked upper lips used to pull leaves from shrubs.', 'Leaves, branches and fruit', 'Savannah and shrubland', '35–50 years', 'Critically Endangered')">
+        <img src="styles/rhino.png" alt="Black Rhinoceros">
+        <h3>Black Rhinoceros</h3>
+    </div>
+
+    <div class="animal-card" onclick="openAnimal('Meerkat', 'styles/meerkat.png', 'Meerkats live in social groups and take turns standing guard while others search for food.', 'Insects, eggs and small animals', 'Dry grasslands and scrub', '8–12 years', 'Least Concern')">
+        <img src="styles/meerkat.png" alt="Meerkat">
+        <h3>Meerkat</h3>
+    </div>
+
+</div>
+</section>
+
+<div id="animal-modal" class="animal-modal">
+    <div class="animal-modal-content">
+        <span class="close-modal" onclick="closeAnimal()">&times;</span>
+
+        <img id="modal-image" src="" alt="Animal image">
+
+        <div class="modal-info">
+            <h2 id="modal-title"></h2>
+            <p id="modal-text"></p>
+
+            <div class="animal-facts">
+                <div><strong>Diet</strong><p id="modal-diet"></p></div>
+                <div><strong>Habitat</strong><p id="modal-habitat"></p></div>
+                <div><strong>Lifespan</strong><p id="modal-lifespan"></p></div>
+                <div><strong>Status</strong><p id="modal-status"></p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="conservation-box">
+    <h2>Conservation Message</h2>
+    <p>
+        Savannah wildlife faces threats from habitat loss, climate change and illegal hunting. This habitat helps
+        visitors understand why protecting migration routes, supporting conservation projects and reducing wildlife
+        crime are essential for the future of African species.
+    </p>
+</div>
+
+<section class="impact-section">
+    <h2>Conservation Impact</h2>
+
+    <div class="impact-grid">
+        <div class="impact-card">
+            <h3 class="counter" data-target="3200">0</h3>
+            <p>Hectares protected</p>
+        </div>
+
+        <div class="impact-card">
+            <h3 class="counter" data-target="42">0</h3>
+            <p>Animals supported</p>
+        </div>
+
+        <div class="impact-card">
+            <h3 class="counter" data-target="1850">0</h3>
+            <p>Visitors educated</p>
+        </div>
+    </div>
+</section>
+
+<section class="visitor-tips">
+    <h2>Visitor Tips</h2>
+
+    <ul>
+        <li>Best time to visit: Early morning or late afternoon</li>
+        <li>Allow 45–60 minutes</li>
+        <li>Wheelchair accessible</li>
+        <li>Daily keeper talks included in admission</li>
+    </ul>
+</section>
+
+<section class="rainforest-gallery">
+    <h2>Savannah Gallery</h2>
+
+    <div class="gallery-grid">
+        <img src="styles/safari.png" alt="Savannah safari" onclick="openGallery(this.src)">
+        <img src="styles/elephant.png" alt="African elephant" onclick="openGallery(this.src)">
+        <img src="styles/lion.png" alt="African lion" onclick="openGallery(this.src)">
+        <img src="styles/giraffe.png" alt="Giraffe" onclick="openGallery(this.src)">
+        <img src="styles/zebra.png" alt="Plains zebra" onclick="openGallery(this.src)">
+        <img src="styles/rhino.png" alt="Black rhinoceros" onclick="openGallery(this.src)">
+    </div>
+</section>
+
+<div id="gallery-modal" class="gallery-modal" onclick="closeGallery()">
+    <span class="gallery-close">&times;</span>
+    <img id="gallery-large-image" src="" alt="Large gallery image">
+</div>
+
+<section class="habitat-navigation">
+
+    <a class="nav-card previous" href="/amazon">
+        <span class="nav-arrow">←</span>
+        <div>
+            <small>Previous Habitat</small>
+            <h3>Canopy of the Amazons</h3>
+        </div>
+    </a>
+
+    <a class="nav-card next" href="/reptile">
+        <div>
+            <small>Next Habitat</small>
+            <h3>Reptile Realm</h3>
+        </div>
+        <span class="nav-arrow">→</span>
+    </a>
+
+</section>
+
+</section>
+
+<script src="scripts/script.js"></script>
+
+<div id="experience-modal" class="experience-modal">
+    <div class="experience-modal-content">
+        <span class="close-modal" onclick="closeExperience()">&times;</span>
+
+        <img id="experience-image" src="" alt="Experience image">
+
+        <div class="experience-modal-info">
+            <h2 id="experience-title"></h2>
+
+            <div class="experience-details">
+                <p><strong>Duration:</strong> <span id="experience-duration"></span></p>
+                <p><strong>Information:</strong> <span id="experience-info"></span></p>
+                <p><strong>Difficulty:</strong> <span id="experience-difficulty"></span></p>
+            </div>
+
+            <p id="experience-description"></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
