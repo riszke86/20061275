@@ -1,15 +1,20 @@
 {
-  "name": "20061275",
+  "name": "aquarium-world",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A promotional website for Aquarium World developed with Node.js, Express, EJS and SQLite.",
+  "main": "index.mjs",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.mjs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "aquarium",
+    "express",
+    "ejs",
+    "sqlite"
+  ],
+  "author": "20061275",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "ejs": "^6.0.1",
     "express": "^5.2.1",

@@ -1,15 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Page</title>
-</head>
+<%- include("partials/header") %>
 
-<body>
+<main>
 
-<h1>This page works!</h1>
+    <section class="page-hero">
 
-<a href="/">Back Home</a>
+        <div class="page-hero-content">
 
-</body>
-</html>
+            <p class="section-label">
+                Visitor Information
+            </p>
+
+            <h1>
+                Frequently Asked Questions
+            </h1>
+
+            <p>
+                Find helpful answers about planning your visit,
+                our marine zones, facilities and accessibility.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="faq-test-section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                Aquarium World Help
+            </p>
+
+            <h2>
+                Database FAQ Records
+            </h2>
+
+        </div>
+
+        <div class="faq-test-list">
+
+            <% faqs.forEach((faq) => { %>
+
+                <article class="faq-test-item">
+
+                    <p>
+                        <strong><%= faq.category %></strong>
+                    </p>
+
+                    <h3>
+                        <%= faq.question %>
+                    </h3>
+
+                    <p>
+                        <%= faq.answer %>
+                    </p>
+
+                </article>
+
+            <% }) %>
+
+        </div>
+
+    </section>
+
+</main>
+
+<%- include("partials/footer") %>

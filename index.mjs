@@ -253,8 +253,40 @@ app.get("/exhibits/:exhibitRoute", (req, res) => {
     });
 });
 
+// ======================================
+// FAQ PAGE
+// ======================================
+
 app.get("/faq", (req, res) => {
-    res.render("faq");
+    const sql = `
+        SELECT
+            id,
+            category,
+            question,
+            answer,
+            display_order
+        FROM faqs
+        WHERE is_active = ?
+        ORDER BY display_order ASC
+    `;
+
+    connection.all(sql, [1], (error, faqs) => {
+        if (error) {
+            console.error(
+                "Could not load FAQ records:",
+                error.message
+            );
+
+            return res.status(500).send(
+                "The FAQ page could not be loaded."
+            );
+        }
+
+        res.render("faq", {
+            pageTitle: "Frequently Asked Questions",
+            faqs
+        });
+    });
 });
 
 app.get("/contact", (req, res) => {
