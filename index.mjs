@@ -282,9 +282,20 @@ app.get("/faq", (req, res) => {
             );
         }
 
+        const groupedFaqs = faqs.reduce((groups, faq) => {
+            if (!groups[faq.category]) {
+                groups[faq.category] = [];
+            }
+
+            groups[faq.category].push(faq);
+
+            return groups;
+        }, {});
+
         res.render("faq", {
             pageTitle: "Frequently Asked Questions",
-            faqs
+            groupedFaqs,
+            categories: Object.keys(groupedFaqs)
         });
     });
 });

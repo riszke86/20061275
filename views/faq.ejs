@@ -2,9 +2,11 @@
 
 <main>
 
-    <section class="page-hero">
+    <!-- ================= FAQ HERO ================= -->
 
-        <div class="page-hero-content">
+    <section class="faq-hero">
+
+        <div class="faq-hero-content">
 
             <p class="section-label">
                 Visitor Information
@@ -16,7 +18,8 @@
 
             <p>
                 Find helpful answers about planning your visit,
-                our marine zones, facilities and accessibility.
+                our marine zones, visitor facilities and accessibility
+                at Aquarium World.
             </p>
 
         </div>
@@ -24,41 +27,171 @@
     </section>
 
 
-    <section class="faq-test-section">
+    <!-- ================= FAQ INTRODUCTION ================= -->
 
-        <div class="section-heading">
+    <section class="faq-introduction">
+
+        <div class="faq-introduction-content">
 
             <p class="section-label">
-                Aquarium World Help
+                Here to Help
             </p>
 
             <h2>
-                Database FAQ Records
+                Planning Your Visit Should Be Simple
             </h2>
+
+            <p>
+                Browse our most frequently asked questions to find useful
+                information before your visit. Each answer is provided
+                directly from the Aquarium World database so the content
+                can be maintained and updated efficiently.
+            </p>
 
         </div>
 
-        <div class="faq-test-list">
+    </section>
 
-            <% faqs.forEach((faq) => { %>
 
-                <article class="faq-test-item">
+    <!-- ================= CATEGORY NAVIGATION ================= -->
 
-                    <p>
-                        <strong><%= faq.category %></strong>
-                    </p>
+    <section class="faq-categories">
 
-                    <h3>
-                        <%= faq.question %>
-                    </h3>
+        <div class="faq-categories-container">
 
-                    <p>
-                        <%= faq.answer %>
-                    </p>
+            <div class="section-heading">
 
-                </article>
+                <p class="section-label">
+                    Browse by Category
+                </p>
+
+                <h2>
+                    Find the Information You Need
+                </h2>
+
+            </div>
+
+            <nav
+                class="faq-category-navigation"
+                aria-label="FAQ categories"
+            >
+
+                <% categories.forEach((category) => { %>
+
+                    <a
+                        href="#<%= category
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]+/g, "-")
+                            .replace(/(^-|-$)/g, "") %>"
+                        class="faq-category-link"
+                    >
+                        <%= category %>
+                    </a>
+
+                <% }) %>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FAQ QUESTIONS ================= -->
+
+    <section class="faq-content">
+
+        <div class="faq-content-container">
+
+            <% categories.forEach((category) => { %>
+
+                <section
+                    class="faq-category-section"
+                    id="<%= category
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/(^-|-$)/g, "") %>"
+                >
+
+                    <div class="faq-category-heading">
+
+                        <p class="section-label">
+                            Aquarium World Help
+                        </p>
+
+                        <h2>
+                            <%= category %>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="faq-list">
+
+                        <% groupedFaqs[category].forEach((faq) => { %>
+
+                            <article class="faq-item">
+
+                                <div class="faq-question">
+
+                                    <h3>
+                                        <%= faq.question %>
+                                    </h3>
+
+                                    <span
+                                        class="faq-question-icon"
+                                        aria-hidden="true"
+                                    >
+                                        +
+                                    </span>
+
+                                </div>
+
+                                <div class="faq-answer">
+
+                                    <p>
+                                        <%= faq.answer %>
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                        <% }) %>
+
+                    </div>
+
+                </section>
 
             <% }) %>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FAQ CALL TO ACTION ================= -->
+
+    <section class="faq-help">
+
+        <div class="faq-help-content">
+
+            <p class="section-label">
+                Still Need Help?
+            </p>
+
+            <h2>
+                Cannot Find the Answer You Need?
+            </h2>
+
+            <p>
+                Our team is always happy to help with questions about
+                Aquarium World, our exhibits and planning your visit.
+            </p>
+
+            <a href="/contact" class="contact-btn">
+                Contact Aquarium World
+            </a>
 
         </div>
 
