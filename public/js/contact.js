@@ -1,49 +1,130 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const contactForm =
-        document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
+const contactLoader = document.getElementById("contactLoader");
+const submitButton = document.getElementById("contactSubmitButton");
 
-    const submitButton =
-        document.getElementById("contactSubmitButton");
+contactForm.addEventListener("submit", async (event) => {
 
-    const contactLoader =
-        document.getElementById("contactLoader");
+    event.preventDefault();
 
-    const buttonText =
-        submitButton?.querySelector(".contact-button-text");
+    // Remove old messages
+    const oldSuccessMessage = document.querySelector(
+        ".contact-success-message"
+    );
 
-    if (
-        !contactForm ||
-        !submitButton ||
-        !contactLoader ||
-        !buttonText
-    ) {
-        return;
+    const oldErrorMessage = document.querySelector(
+        ".contact-error-message"
+    );
+
+    if (oldSuccessMessage) {
+        oldSuccessMessage.remove();
     }
 
-    let isSubmitting = false;
+    if (oldErrorMessage) {
+        oldErrorMessage.remove();
+    }
 
-    contactForm.addEventListener("submit", (event) => {
-        if (isSubmitting) {
-            event.preventDefault();
-            return;
+
+    // Show loader
+    contactLoader.setAttribute("aria-hidden", "false");
+    contactLoader.style.display = "block";
+
+    // Disable submit button
+    submitButton.disabled = true;
+
+
+    // Collect form data
+    const formData = new FormData(contactForm);
+
+    const formObject = Object.fromEntries(
+        formData.entries()
+    );
+
+
+    try {
+
+        const response = await fetch("/contact", {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(formObject)
+        });
+
+
+        const result = await response.json();
+
+
+        // ======================================
+        // SUCCESS
+        // ======================================
+
+        if (response.ok && result.success) {
+
+            const successMessage = document.createElement("div");
+
+            successMessage.className =
+                "contact-success-message";
+
+            successMessage.innerHTML = `
+                <strong>Thank you!</strong>
+                <p>${result.message}</p>
+            `;
+
+            contactForm.before(successMessage);
+
+            contactForm.reset();
         }
 
-        if (!contactForm.checkValidity()) {
-            return;
+
+        // ======================================
+        // ERROR FROM SERVER
+        // ======================================
+
+        else {
+
+            const errorMessage = document.createElement("div");
+
+            errorMessage.className =
+                "contact-error-message";
+
+            errorMessage.innerHTML = `
+                <p>${result.message}</p>
+            `;
+
+            contactForm.before(errorMessage);
         }
 
-        event.preventDefault();
+    }
 
-        isSubmitting = true;
+    catch (error) {
 
-        submitButton.disabled = true;
-        buttonText.textContent = "Sending...";
+        console.error(
+            "Contact form AJAX error:",
+            error
+        );
 
-        contactLoader.classList.add("is-visible");
-        contactLoader.setAttribute("aria-hidden", "false");
+        const errorMessage = document.createElement("div");
 
-        window.setTimeout(() => {
-            contactForm.submit();
-        }, 900);
-    });
+        errorMessage.className =
+            "contact-error-message";
+
+        errorMessage.innerHTML = `
+            <p>
+                Something went wrong.
+                Please try again.
+            </p>
+        `;
+
+        contactForm.before(errorMessage);
+    }
+
+
+    // Hide loader
+    contactLoader.setAttribute("aria-hidden", "true");
+    contactLoader.style.display = "none";
+
+    // Re-enable button
+    submitButton.disabled = false;
 });

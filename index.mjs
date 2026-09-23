@@ -333,14 +333,24 @@ app.post("/contact", (req, res) => {
     const {
         fullName,
         email,
+        telephone,
         subject,
         message
     } = req.body;
 
+    // ======================================
+    // CLEAN FORM DATA
+    // ======================================
+
     const cleanedFullName = fullName?.trim();
     const cleanedEmail = email?.trim();
+    const cleanedTelephone = telephone?.trim();
     const cleanedSubject = subject?.trim();
     const cleanedMessage = message?.trim();
+
+    // ======================================
+    // SERVER-SIDE VALIDATION
+    // ======================================
 
     if (
         !cleanedFullName ||
@@ -348,38 +358,15 @@ app.post("/contact", (req, res) => {
         !cleanedSubject ||
         !cleanedMessage
     ) {
-        const sql = `
-            SELECT *
-            FROM contact_details
-            WHERE id = ?
-        `;
-
-        return connection.get(sql, [1], (error, contactDetails) => {
-            if (error) {
-                console.error(
-                    "Could not reload contact details:",
-                    error.message
-                );
-
-                return res.status(500).send(
-                    "The contact page could not be loaded."
-                );
-            }
-
-            return res.status(400).render("contact", {
-                pageTitle: "Contact Us",
-                contactDetails,
-                messageSent: false,
-                formError: "Please complete all required fields.",
-                formData: {
-                    fullName: cleanedFullName || "",
-                    email: cleanedEmail || "",
-                    subject: cleanedSubject || "",
-                    message: cleanedMessage || ""
-                }
-            });
+      return res.status(400).json({
+            success: false,
+            message: "Please complete all required fields."
         });
     }
+
+    // ======================================
+    // INSERT MESSAGE INTO DATABASE
+    // ======================================
 
     const sql = `
         INSERT INTO contact_messages (
@@ -395,10 +382,11 @@ app.post("/contact", (req, res) => {
     const values = [
         cleanedFullName,
         cleanedEmail,
-        null,
+        cleanedTelephone || null,
         cleanedSubject,
         cleanedMessage
     ];
+
 
     connection.run(sql, values, function (error) {
         if (error) {
@@ -407,19 +395,27 @@ app.post("/contact", (req, res) => {
                 error.message
             );
 
-            return res.status(500).send(
-                "Your message could not be submitted."
-            );
+            return res.status(500).json({
+                success: false,
+                message: "Your message could not be submitted."
+            });
         }
+
 
         console.log(
             `Contact message saved. Message ID: ${this.lastID}`
         );
 
-        res.redirect("/contact?sent=true");
+
+        // AJAX SUCCESS RESPONSE
+
+        return res.status(201).json({
+            success: true,
+            message: "Your message has been sent successfully.",
+            messageId: this.lastID
+        });
     });
 });
-
 
 // ======================================
 // START SERVER

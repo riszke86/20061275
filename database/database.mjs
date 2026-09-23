@@ -108,6 +108,8 @@ const insertDefaultContactDetails = () => {
     );
 };
 
+console.log("Database path:", databasePath);
+
 
 // ======================================================
 // CREATE FAQ TABLE
