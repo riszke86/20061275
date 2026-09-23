@@ -1,1 +1,306 @@
-/* Page-specific styles will be added here. */
+/* ======================================================
+   AQUARIUM WORLD — ZONES PAGE
+====================================================== */
+
+
+/* ================= HERO ================= */
+
+.zones-hero {
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px 80px;
+
+    background:
+        linear-gradient(
+            rgba(0, 20, 35, 0.78),
+            rgba(0, 20, 35, 0.88)
+        ),
+        url("/images/zones/coral-kingdom.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.zones-hero .page-hero-content {
+    max-width: 850px;
+}
+
+
+.zones-hero h1 {
+    margin: 12px 0 20px;
+
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    line-height: 1.05;
+
+    color: #ffffff;
+}
+
+
+.zones-hero p {
+    max-width: 720px;
+    margin-inline: auto;
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ================= ZONES SECTION ================= */
+
+.featured-zones {
+    padding: 90px 6% 110px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #031a29 0%,
+            #041f31 100%
+        );
+}
+
+
+.section-heading {
+    max-width: 800px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    margin: 10px 0 18px;
+
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+
+    color: #ffffff;
+}
+
+
+.section-introduction {
+    font-size: 1.08rem;
+    line-height: 1.75;
+
+    color: rgba(255, 255, 255, 0.76);
+}
+
+
+/* ================= GRID ================= */
+
+.zones-grid {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 32px;
+}
+
+
+/* ================= ZONE CARD ================= */
+
+.zone-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 520px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    background: #08283a;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.24);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.zone-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(92, 215, 226, 0.35);
+
+    box-shadow:
+        0 26px 60px
+        rgba(0, 0, 0, 0.34);
+}
+
+
+/* ================= IMAGE ================= */
+
+.zone-image-wrapper {
+    height: 285px;
+
+    overflow: hidden;
+
+    background: #02131d;
+}
+
+
+.zone-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+.zone-card:hover .zone-image {
+    transform: scale(1.06);
+
+    filter:
+        brightness(1.06)
+        saturate(1.08);
+}
+
+
+/* ================= CONTENT ================= */
+
+.zone-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 30px 32px;
+}
+
+
+.zone-tag {
+    margin: 0 0 10px;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: #5cd7e2;
+}
+
+
+.zone-content h3 {
+    margin: 0 0 15px;
+
+    font-size: 1.8rem;
+
+    color: #ffffff;
+}
+
+
+.zone-content > p:not(.zone-tag) {
+    margin: 0 0 24px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+}
+
+
+.zone-link {
+    margin-top: auto;
+
+    display: inline-flex;
+    align-items: center;
+
+    font-weight: 700;
+
+    color: #7fe5ed;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.zone-card:hover .zone-link {
+    transform: translateX(5px);
+
+    color: #ffffff;
+}
+
+
+/* ================= FOCUS ================= */
+
+.zone-card:focus-visible {
+    outline: 3px solid #67dce5;
+    outline-offset: 5px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .zones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .zone-card {
+        min-height: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .featured-zones {
+        padding:
+            70px 20px
+            85px;
+    }
+
+    .zones-hero {
+        min-height: 360px;
+
+        padding:
+            80px 20px
+            65px;
+    }
+
+    .zone-image-wrapper {
+        height: 230px;
+    }
+
+    .zone-content {
+        padding: 24px;
+    }
+
+    .zone-content h3 {
+        font-size: 1.55rem;
+    }
+
+}
