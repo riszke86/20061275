@@ -195,6 +195,12 @@ app.get("/about", (req, res) => {
     });
 });
 
+app.get("/experiences", (req, res) => {
+    res.render("experiences", {
+        pageTitle: "Experiences"
+    });
+});
+
 app.get("/zones", (req, res) => {
     res.render("zones");
 });
