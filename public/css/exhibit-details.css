@@ -1,0 +1,383 @@
+/* =========================================================
+   AQUARIUM WORLD — EXHIBIT DETAILS
+   ========================================================= */
+
+
+/* ================= EXHIBIT HERO ================= */
+
+.exhibit-details-hero {
+    min-height: 420px;
+    padding: 80px 8% 55px;
+
+    display: flex;
+    align-items: flex-end;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+.exhibit-hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.exhibit-hero-content .section-label {
+    margin-bottom: 12px;
+}
+
+.exhibit-hero-content h1 {
+    margin: 0 0 16px;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    color: #ffffff;
+}
+
+.exhibit-hero-content > p:last-child {
+    max-width: 700px;
+    margin: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ================= ABOUT EXHIBIT ================= */
+
+.exhibit-about {
+    padding: 90px 8%;
+    background: #ffffff;
+}
+
+.exhibit-about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.exhibit-about-image {
+    overflow: hidden;
+    border-radius: 24px;
+
+    box-shadow: 0 20px 45px rgba(2, 23, 40, 0.15);
+}
+
+.exhibit-about-image img {
+    display: block;
+
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.exhibit-about-image:hover img {
+    transform: scale(1.03);
+}
+
+.exhibit-about-content h2 {
+    margin: 10px 0 22px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+
+    color: #06263b;
+}
+
+.exhibit-about-content p:not(.section-label) {
+    margin: 0 0 18px;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    color: #52626c;
+}
+
+
+/* ================= HIGHLIGHTS ================= */
+
+.exhibit-highlights {
+    padding: 90px 8% 100px;
+
+    background: #f3f8fa;
+}
+
+.exhibit-highlights .section-heading {
+    max-width: 750px;
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.exhibit-highlights .section-heading h2 {
+    margin: 10px 0 18px;
+
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.15;
+
+    color: #06263b;
+}
+
+.exhibit-highlights .section-heading > p:last-child {
+    margin: 0;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    color: #60717b;
+}
+
+.exhibit-highlights-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+
+/* ================= HIGHLIGHT CARDS ================= */
+
+.exhibit-highlight-card {
+    min-height: 230px;
+    padding: 38px 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(11, 116, 144, 0.12);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(2, 23, 40, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.exhibit-highlight-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(17, 159, 190, 0.35);
+
+    box-shadow: 0 18px 38px rgba(2, 23, 40, 0.12);
+}
+
+.exhibit-highlight-card h3 {
+    margin: 0 0 14px;
+
+    font-size: 1.5rem;
+
+    color: #087d9b;
+}
+
+.exhibit-highlight-card p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #5c6b74;
+}
+
+
+/* ================= CONTINUE EXPLORING ================= */
+
+.exhibit-return {
+    padding: 85px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #021d30,
+            #073c50
+        );
+
+    color: #ffffff;
+}
+
+.exhibit-return-content {
+    max-width: 900px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.exhibit-return-content h2 {
+    margin: 0 0 15px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    color: #ffffff;
+}
+
+.exhibit-return-content > p {
+    max-width: 600px;
+    margin: 0 auto 32px;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* ================= RETURN BUTTONS ================= */
+
+.exhibit-return-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+}
+
+.exhibit-return-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 180px;
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.exhibit-return-buttons .primary-button {
+    background: #35c2dc;
+    color: #021d30;
+}
+
+.exhibit-return-buttons .primary-button:hover {
+    transform: translateY(-3px);
+    background: #ffffff;
+}
+
+.exhibit-return-buttons .secondary-button {
+    border: 2px solid rgba(255, 255, 255, 0.65);
+
+    background: transparent;
+    color: #ffffff;
+}
+
+.exhibit-return-buttons .secondary-button:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+    color: #06263b;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .exhibit-details-hero {
+        min-height: 380px;
+        padding: 70px 6% 45px;
+    }
+
+    .exhibit-about {
+        padding: 70px 6%;
+    }
+
+    .exhibit-about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .exhibit-about-image img {
+        height: 380px;
+    }
+
+    .exhibit-highlights {
+        padding: 70px 6%;
+    }
+
+    .exhibit-highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .exhibit-details-hero {
+        min-height: 330px;
+        padding: 60px 24px 35px;
+    }
+
+    .exhibit-hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .exhibit-hero-content > p:last-child {
+        font-size: 0.95rem;
+    }
+
+    .exhibit-about {
+        padding: 55px 24px;
+    }
+
+    .exhibit-about-image {
+        border-radius: 16px;
+    }
+
+    .exhibit-about-image img {
+        height: 280px;
+    }
+
+    .exhibit-highlights {
+        padding: 55px 24px 65px;
+    }
+
+    .exhibit-highlights .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .exhibit-highlight-card {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .exhibit-return {
+        padding: 60px 24px;
+    }
+
+    .exhibit-return-buttons {
+        flex-direction: column;
+    }
+
+    .exhibit-return-buttons a {
+        width: 100%;
+    }
+
+}
