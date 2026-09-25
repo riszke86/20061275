@@ -23,6 +23,88 @@ contactForm.addEventListener("submit", async (event) => {
         oldErrorMessage.remove();
     }
 
+    // ======================================
+    // CLIENT-SIDE FORM VALIDATION
+    // ======================================
+
+    const nameInput = contactForm.querySelector('[name="fullName"]');
+    const emailInput = contactForm.querySelector('[name="email"]');
+    const messageInput = contactForm.querySelector('[name="message"]');
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    // Check required fields
+    if (!name || !email || !message) {
+
+        const errorMessage =
+            document.createElement("div");
+
+        errorMessage.className =
+            "contact-error-message";
+
+        errorMessage.innerHTML = `
+            <p>
+                Please complete all required fields.
+            </p>
+        `;
+
+        contactForm.before(errorMessage);
+
+        return;
+    }
+
+
+// Check email format
+    if (!emailPattern.test(email)) {
+
+        const errorMessage =
+            document.createElement("div");
+
+        errorMessage.className =
+            "contact-error-message";
+
+        errorMessage.innerHTML = `
+            <p>
+                Please enter a valid email address.
+            </p>
+        `;
+
+        contactForm.before(errorMessage);
+
+        emailInput.focus();
+
+        return;
+    }
+
+
+// Check message length
+    if (message.length < 10) {
+
+        const errorMessage =
+            document.createElement("div");
+
+        errorMessage.className =
+            "contact-error-message";
+
+        errorMessage.innerHTML = `
+            <p>
+                Your message must contain at least 10 characters.
+            </p>
+        `;
+
+        contactForm.before(errorMessage);
+
+        messageInput.focus();
+
+        return;
+    }
+
 
     // Show loader
     contactLoader.setAttribute("aria-hidden", "false");

@@ -418,3 +418,35 @@ if (searchToggle && searchPanel && searchClose && siteSearch) {
     }
 
 }
+
+// ======================================
+// MOBILE NAVIGATION
+// ======================================
+
+const mobileMenuToggle =
+    document.getElementById("mobile-menu-toggle");
+
+const navigationLinks =
+    document.getElementById("navigation-links");
+
+if (mobileMenuToggle && navigationLinks) {
+
+    mobileMenuToggle.addEventListener("click", () => {
+
+        const menuIsOpen =
+            navigationLinks.classList.toggle("mobile-menu-open");
+
+        mobileMenuToggle.setAttribute(
+            "aria-expanded",
+            menuIsOpen
+        );
+
+        mobileMenuToggle.setAttribute(
+            "aria-label",
+            menuIsOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+    });
+
+}
