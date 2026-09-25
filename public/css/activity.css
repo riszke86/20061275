@@ -1,0 +1,332 @@
+/* =========================================================
+   AQUARIUM WORLD — INTERACTIVE ACTIVITY
+   ========================================================= */
+
+
+/* ================= HERO ================= */
+
+.activity-hero {
+    background:
+        linear-gradient(
+            rgba(3, 31, 46, 0.72),
+            rgba(3, 31, 46, 0.82)
+        ),
+        url("/images/zones/deep-sea-trench.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ================= ACTIVITY SECTION ================= */
+
+.activity-section {
+    padding: 80px 20px 90px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #062f3d 0%,
+            #084b59 45%,
+            #0b6671 100%
+        );
+}
+
+.activity-section .section-heading h2 {
+    color: #ffffff;
+}
+
+.activity-section .section-heading .section-introduction {
+    color: #d8eaed;
+}
+
+.activity-section .section-label {
+    color: #72d7e5;
+}
+
+.activity-container {
+    width: min(900px, 92%);
+    margin: 0 auto;
+}
+
+
+/* ================= GAME STATUS ================= */
+
+.game-status {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+    margin: 35px auto 25px;
+}
+
+.game-status p {
+    margin: 0;
+    padding: 12px 24px;
+
+    color: #173d49;
+    background-color: #ffffff;
+
+    border: 1px solid #d7e4e7;
+    border-radius: 30px;
+
+    font-size: 15px;
+}
+
+.game-status strong {
+    color: #087f8c;
+}
+
+
+/* ================= GAME ================= */
+
+.discovery-game {
+    padding: 35px;
+
+    background-color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+
+    box-shadow: 0 18px 45px rgba(0, 20, 30, 0.28);
+
+    text-align: center;
+}
+
+
+/* ================= CREATURE IMAGE ================= */
+
+.creature-image-container {
+    position: relative;
+
+    width: min(650px, 100%);
+    aspect-ratio: 16 / 9;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background-color: #062b39;
+}
+
+.creature-image-container img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ================= REVEAL TILES ================= */
+
+.tile-grid {
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.reveal-tile {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background:
+        linear-gradient(
+            135deg,
+            #063d4c,
+            #0b6572
+        );
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.2s ease;
+}
+
+.reveal-tile:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #0a5666,
+            #0d7c88
+        );
+}
+
+.reveal-tile.is-revealed {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* ================= ANSWER OPTIONS ================= */
+
+.answer-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+
+    width: min(650px, 100%);
+
+    margin: 25px auto 0;
+}
+
+.answer-button {
+    padding: 14px 18px;
+
+    color: #073944;
+    background-color: #eef6f7;
+
+    border: 1px solid #c9dfe3;
+    border-radius: 10px;
+
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.answer-button:hover {
+    background-color: #dceff1;
+
+    transform: translateY(-2px);
+}
+
+.answer-button:disabled {
+    cursor: default;
+
+    opacity: 0.75;
+}
+
+
+/* ================= FEEDBACK ================= */
+
+.game-feedback {
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    font-weight: 700;
+}
+
+.game-feedback.correct {
+    color: #177245;
+}
+
+.game-feedback.incorrect {
+    color: #a33a3a;
+}
+
+
+/* ================= NEXT BUTTON ================= */
+
+.next-creature-button {
+    margin-top: 10px;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* ================= INFORMATION ================= */
+
+.activity-information {
+    padding: 75px 20px;
+
+    color: #ffffff;
+    background-color: #073944;
+}
+
+.activity-information-content {
+    width: min(760px, 90%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.activity-information-content h2 {
+    margin: 8px 0 20px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.activity-information-content p:not(.section-label) {
+    color: #d9e7e9;
+
+    line-height: 1.7;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 800px) {
+
+    .activity-section {
+        padding: 65px 20px;
+    }
+
+    .discovery-game {
+        padding: 22px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .activity-section {
+        padding: 50px 15px;
+    }
+
+    .game-status {
+        gap: 10px;
+    }
+
+ .game-status p {
+    margin: 0;
+    padding: 12px 24px;
+
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+
+    font-size: 15px;
+}
+
+.game-status strong {
+    color: #79e1eb;
+}
+
+    .discovery-game {
+        padding: 15px;
+
+        border-radius: 15px;
+    }
+
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-information {
+        padding: 60px 20px;
+    }
+
+}

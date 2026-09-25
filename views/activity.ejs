@@ -1,0 +1,163 @@
+<%- include("partials/header", { pageTitle: "Deep Sea Discovery" }) %>
+
+<main>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="page-hero activity-hero">
+
+        <div class="page-hero-content">
+
+            <p class="section-label">
+                Interactive Activity
+            </p>
+
+            <h1>Deep Sea Discovery</h1>
+
+            <p>
+                How well do you know the creatures of the ocean?
+                Reveal the hidden image and identify the marine animal.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GAME ================= -->
+
+    <section class="activity-section">
+
+        <div class="activity-container">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    Test Your Knowledge
+                </p>
+
+                <h2>Guess the Marine Creature</h2>
+
+                <p class="section-introduction">
+                    Click the tiles to reveal parts of the image,
+                    then choose the correct answer.
+                </p>
+
+            </div>
+
+
+            <!-- GAME STATUS -->
+
+            <div class="game-status">
+
+                <p>
+                    Round:
+                    <strong>
+                        <span id="current-round">1</span>/4
+                    </strong>
+                </p>
+
+                <p>
+                    Score:
+                    <strong>
+                        <span id="score">0</span>
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <!-- IMAGE REVEAL AREA -->
+
+            <div class="discovery-game">
+
+                <div
+                    class="creature-image-container"
+                    id="creature-image-container"
+                >
+
+                    <img
+                        id="creature-image"
+                        src=""
+                        alt="Hidden marine creature"
+                    >
+
+                    <div
+                        class="tile-grid"
+                        id="tile-grid"
+                        aria-label="Click tiles to reveal the hidden marine creature"
+                    >
+                    </div>
+
+                </div>
+
+
+                <!-- ANSWERS -->
+
+                <div
+                    class="answer-options"
+                    id="answer-options"
+                >
+                </div>
+
+
+                <!-- FEEDBACK -->
+
+                <div
+                    class="game-feedback"
+                    id="game-feedback"
+                    aria-live="polite"
+                >
+                </div>
+
+
+                <!-- NEXT ROUND -->
+
+                <button
+                    type="button"
+                    id="next-creature"
+                    class="button next-creature-button"
+                    hidden
+                >
+                    Next Creature
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INSTRUCTIONS ================= -->
+
+    <section class="activity-information">
+
+        <div class="activity-information-content">
+
+            <p class="section-label">
+                How to Play
+            </p>
+
+            <h2>Discover What Is Hiding</h2>
+
+            <p>
+                Select tiles covering the photograph to reveal parts of
+                the marine creature. When you think you know the answer,
+                choose one of the options below the image.
+            </p>
+
+            <p>
+                Try to identify all four creatures and achieve the
+                highest possible score.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="/js/activity.js"></script>
+
+<%- include("partials/footer") %>

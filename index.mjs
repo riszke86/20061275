@@ -61,6 +61,14 @@ app.get("/experiences", (req, res) => {
     });
 });
 
+// INTERACTIVE ACTIVITY PAGE
+
+app.get("/activity", (req, res) => {
+    res.render("activity", {
+        pageTitle: "Deep Sea Discovery"
+    });
+});
+
 app.get("/zones", (req, res) => {
 
     const sql = `
