@@ -34,7 +34,64 @@
                 <a href="/contact">Contact Us</a>
             </li>
 
+            <li class="search-navigation">
+
+                <button
+                    type="button"
+                    id="search-toggle"
+                    class="search-toggle"
+                    aria-label="Open aquarium search"
+                    aria-expanded="false"
+                >
+                    Search
+                </button>
+            </li>
+
         </ul>
 
+        <!-- ================= AJAX SEARCH PANEL ================= -->
+
+        <div
+            id="search-panel"
+            class="search-panel"
+            hidden
+        >
+            <div class="search-panel-content">
+
+                 <label for="site-search">
+                    Search Aquarium World
+                </label>
+
+            <div class="search-input-wrapper">
+
+                <input
+                    type="search"
+                    id="site-search"
+                    placeholder="Search zones or exhibits..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="search-close"
+                    class="search-close"
+                    aria-label="Close search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div
+                id="search-results"
+                class="search-results"
+                aria-live="polite"
+            >
+                <p class="search-message">
+                    Start typing to search our aquarium.
+                </p>
+            </div>
+
+        </div>
     </div>
 </nav>

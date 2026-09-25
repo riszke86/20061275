@@ -103,6 +103,71 @@ app.get("/zones", (req, res) => {
     });
 });
 
+// ======================================
+// AJAX SEARCH API
+// ======================================
+
+app.get("/api/search", (req, res) => {
+
+    const searchTerm = req.query.q?.trim();
+
+    // Do not search for empty text
+    if (!searchTerm) {
+        return res.json([]);
+    }
+
+    const searchValue = `%${searchTerm}%`;
+
+    const sql = `
+        SELECT
+            name,
+            route,
+            'zone' AS type
+        FROM zones
+        WHERE name LIKE ?
+           OR introduction LIKE ?
+           OR description LIKE ?
+
+        UNION ALL
+
+        SELECT
+            name,
+            route,
+            'exhibit' AS type
+        FROM exhibits
+        WHERE name LIKE ?
+           OR description LIKE ?
+
+        LIMIT 10
+    `;
+
+    connection.all(
+        sql,
+        [
+            searchValue,
+            searchValue,
+            searchValue,
+            searchValue,
+            searchValue
+        ],
+        (error, results) => {
+
+            if (error) {
+                console.error(
+                    "Search error:",
+                    error.message
+                );
+
+                return res.status(500).json({
+                    error: "Search could not be completed."
+                });
+            }
+
+            res.json(results);
+        }
+    );
+});
+
 app.get("/zones/:zoneRoute", (req, res) => {
 
     const zoneRoute = req.params.zoneRoute;

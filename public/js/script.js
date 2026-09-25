@@ -198,3 +198,223 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+// =========================================================
+// AQUARIUM WORLD — SEARCH PANEL
+// =========================================================
+
+const searchToggle = document.getElementById("search-toggle");
+const searchPanel = document.getElementById("search-panel");
+const searchClose = document.getElementById("search-close");
+const siteSearch = document.getElementById("site-search");
+
+if (searchToggle && searchPanel && searchClose && siteSearch) {
+
+    // Open search panel
+    searchToggle.addEventListener("click", () => {
+
+        searchPanel.hidden = false;
+
+        searchToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        siteSearch.focus();
+    });
+
+
+    // Close search panel
+    searchClose.addEventListener("click", () => {
+
+        searchPanel.hidden = true;
+
+        searchToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        searchToggle.focus();
+    });
+
+
+    // Close search with Escape key
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            !searchPanel.hidden
+        ) {
+
+            searchPanel.hidden = true;
+
+            searchToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            searchToggle.focus();
+        }
+    });
+
+// =========================================================
+// AJAX DATABASE SEARCH
+// =========================================================
+
+    const searchResults =
+        document.getElementById("search-results");
+
+    let searchTimer;
+
+
+    // Search while the user types
+    siteSearch.addEventListener("input", () => {
+
+        const query = siteSearch.value.trim();
+
+        clearTimeout(searchTimer);
+
+
+    // Empty search
+        if (query.length === 0) {
+
+            searchResults.innerHTML = `
+                <p class="search-message">
+                    Start typing to search our aquarium.
+                </p>
+            `;
+
+            return;
+        }
+
+
+    // Require at least 2 characters
+        if (query.length < 2) {
+
+            searchResults.innerHTML = `
+                <p class="search-message">
+                    Enter at least 2 characters.
+                </p>
+            `;
+
+            return;
+        }
+
+
+        searchResults.innerHTML = `
+            <p class="search-message">
+                Searching...
+            </p>
+        `;
+
+
+    // Small delay prevents a request after every keystroke
+        searchTimer = setTimeout(() => {
+
+            searchAquarium(query);
+
+        }, 300);
+
+    });
+
+
+// Send AJAX request to Express
+    async function searchAquarium(query) {
+
+        try {
+
+            const response = await fetch(
+                `/api/search?q=${encodeURIComponent(query)}`
+            );
+
+
+            if (!response.ok) {
+                throw new Error(
+                    "Search request failed."
+                );
+            }
+
+
+            const results = await response.json();
+
+            displaySearchResults(results);
+
+        } catch (error) {
+
+            console.error(
+                "Search error:",
+                error
+            );
+
+            searchResults.innerHTML = `
+                <p class="search-message">
+                    Sorry, the search could not be completed.
+                </p>
+            `;
+        }
+    }
+
+
+// Display database results
+    function displaySearchResults(results) {
+
+        searchResults.innerHTML = "";
+
+
+        if (results.length === 0) {
+
+            searchResults.innerHTML = `
+                <p class="search-message">
+                    No matching zones or exhibits were found.
+                </p>
+            `;
+
+            return;
+        }
+
+
+        results.forEach(result => {
+
+            const link =
+                document.createElement("a");
+
+            link.className = "search-result";
+
+
+        // Create correct page URL
+            if (result.type === "zone") {
+
+             link.href =
+                    `/zones/${result.route}`;
+
+            } else {
+
+                link.href =
+                    `/exhibits/${result.route}`;
+            }
+
+
+            const title =
+                document.createElement("strong");
+
+            title.textContent =
+                result.name;
+
+
+            const type =
+                document.createElement("span");
+
+            type.textContent =
+                result.type === "zone"
+                    ? "Aquarium Zone"
+                    : "Exhibit";
+
+
+            link.appendChild(title);
+            link.appendChild(type);
+
+            searchResults.appendChild(link);
+        });
+    }
+
+}
