@@ -43,6 +43,10 @@
     color: #90e0ef;
 }
 
+.mobile-menu-toggle {
+    display: none;
+}
+
 
 /* =============BUTTONS================ */
 
