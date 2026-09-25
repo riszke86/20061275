@@ -39,29 +39,32 @@
 
     <div class="zones-grid">
 
-        <!-- Coral Kingdom -->
+    <% zones.forEach(zone => { %>
 
-        <a href="/zones/coral-kingdom" class="zone-card">
+        <a href="/zones/<%= zone.route %>" class="zone-card">
 
             <div class="zone-image-wrapper">
+
                 <img
-                    src="/images/zones/coral-kingdom.png"
-                    alt="Colourful coral reef in Coral Kingdom"
+                    src="<%= zone.image %>"
+                    alt="<%= zone.name %> aquarium habitat"
                     class="zone-image"
                 >
+
             </div>
 
             <div class="zone-content">
 
                 <p class="zone-tag">
-                    Tropical Reef
+                    <%= zone.tag %>
                 </p>
 
-                <h3>Coral Kingdom</h3>
+                <h3>
+                    <%= zone.name %>
+                </h3>
 
                 <p>
-                    Colourful coral reefs filled with tropical fish,
-                    sea turtles and vibrant marine life.
+                    <%= zone.introduction %>
                 </p>
 
                 <span class="zone-link">
@@ -72,109 +75,9 @@
 
         </a>
 
+    <% }); %>
 
-        <!-- Deep Sea Trench -->
-
-        <a href="/zones/deep-sea-trench" class="zone-card">
-
-            <div class="zone-image-wrapper">
-                <img
-                    src="/images/zones/deep-sea-trench.png"
-                    alt="Dark deep sea environment"
-                    class="zone-image"
-                >
-            </div>
-
-            <div class="zone-content">
-
-                <p class="zone-tag">
-                    Deep Ocean
-                </p>
-
-                <h3>Deep Sea Trench</h3>
-
-                <p>
-                    Journey into the deepest parts of the ocean and discover
-                    mysterious creatures that live without sunlight.
-                </p>
-
-                <span class="zone-link">
-                    Explore Zone →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- Coastal Rockpools -->
-
-        <a href="/zones/coastal-rockpools" class="zone-card">
-
-            <div class="zone-image-wrapper">
-                <img
-                    src="/images/zones/coastal-rockpools.png"
-                    alt="Coastal rockpool habitat"
-                    class="zone-image"
-                >
-            </div>
-
-            <div class="zone-content">
-
-                <p class="zone-tag">
-                    Coastal Habitat
-                </p>
-
-                <h3>Coastal Rockpools</h3>
-
-                <p>
-                    Explore the fascinating animals found along the shoreline,
-                    from starfish to crabs and sea anemones.
-                </p>
-
-                <span class="zone-link">
-                    Explore Zone →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- Rainforest Rivers -->
-
-        <a href="/zones/rainforest-rivers" class="zone-card">
-
-            <div class="zone-image-wrapper">
-                <img
-                    src="/images/zones/rainforest-rivers.png"
-                    alt="Tropical rainforest river habitat"
-                    class="zone-image"
-                >
-            </div>
-
-            <div class="zone-content">
-
-                <p class="zone-tag">
-                    Freshwater World
-                </p>
-
-                <h3>Rainforest Rivers</h3>
-
-                <p>
-                    Discover freshwater habitats inspired by the Amazon
-                    and other tropical river systems.
-                </p>
-
-                <span class="zone-link">
-                    Explore Zone →
-                </span>
-
-            </div>
-
-        </a>
-
-    </div>
+</div>
 
 </section>
 
