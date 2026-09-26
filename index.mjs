@@ -61,6 +61,232 @@ app.get("/experiences", (req, res) => {
     });
 });
 
+// ==================== SPECIAL EVENTS ====================
+
+app.get("/events", (req, res) => {
+
+    const eventsSql = `
+        SELECT
+            events.id,
+            events.title,
+            events.event_date,
+            events.start_time,
+            events.end_time,
+            events.location,
+            events.image,
+            events.short_description,
+            events.full_description,
+            event_categories.id AS category_id,
+            event_categories.name AS category,
+            CASE
+                WHEN date(events.event_date) < date('now')
+                THEN 1
+                ELSE 0
+            END AS is_past
+        FROM events
+        JOIN event_categories
+            ON events.category_id = event_categories.id
+        WHERE strftime('%Y', events.event_date) = ?
+        ORDER BY events.event_date ASC
+    `;
+
+    const categoriesSql = `
+        SELECT id, name
+        FROM event_categories
+        ORDER BY name ASC
+    `;
+
+    const yearsSql = `
+        SELECT DISTINCT
+            strftime('%Y', event_date) AS year
+        FROM events
+        ORDER BY year DESC
+    `;
+
+    const currentYear = new Date().getFullYear().toString();
+
+    connection.all(eventsSql, [currentYear], (eventsError, events) => {
+
+        if (eventsError) {
+            console.error("Could not load events:", eventsError.message);
+
+            return res.status(500).send(
+                "The events page could not be loaded."
+            );
+        }
+
+        connection.all(categoriesSql, [], (categoriesError, categories) => {
+
+            if (categoriesError) {
+                console.error(
+                    "Could not load event categories:",
+                    categoriesError.message
+                );
+
+                return res.status(500).send(
+                    "The events page could not be loaded."
+                );
+            }
+
+            connection.all(yearsSql, [], (yearsError, years) => {
+
+                if (yearsError) {
+                    console.error(
+                        "Could not load event years:",
+                        yearsError.message
+                    );
+
+                    return res.status(500).send(
+                        "The events page could not be loaded."
+                    );
+                }
+
+                res.render("events", {
+                    pageTitle: "Special Events",
+                    events,
+                    categories,
+                    years,
+                    currentYear
+                });
+            });
+        });
+    });
+});
+
+// ==================== EVENTS AJAX API ====================
+
+app.get("/api/events", (req, res) => {
+
+    const year = req.query.year;
+    const category = req.query.category;
+
+    // Validate the year
+    if (!year || !/^\d{4}$/.test(year)) {
+        return res.status(400).json({
+            error: "Invalid event year."
+        });
+    }
+
+    let sql = `
+        SELECT
+            events.id,
+            events.title,
+            events.event_date,
+            events.start_time,
+            events.end_time,
+            events.location,
+            events.image,
+            events.short_description,
+            event_categories.id AS category_id,
+            event_categories.name AS category,
+            CASE
+                WHEN date(events.event_date) < date('now')
+                THEN 1
+                ELSE 0
+            END AS is_past
+        FROM events
+        JOIN event_categories
+            ON events.category_id = event_categories.id
+        WHERE strftime('%Y', events.event_date) = ?
+    `;
+
+    const values = [year];
+
+    // Add category filter when one is selected
+    if (category && category !== "all") {
+
+        if (!/^\d+$/.test(category)) {
+            return res.status(400).json({
+                error: "Invalid event category."
+            });
+        }
+
+        sql += `
+            AND events.category_id = ?
+        `;
+
+        values.push(category);
+    }
+
+    sql += `
+        ORDER BY events.event_date ASC
+    `;
+
+    connection.all(sql, values, (error, events) => {
+
+        if (error) {
+            console.error(
+                "Could not filter events:",
+                error.message
+            );
+
+            return res.status(500).json({
+                error: "Events could not be loaded."
+            });
+        }
+
+        res.json(events);
+    });
+});
+
+// ==================== EVENT DETAILS AJAX API ====================
+
+app.get("/api/events/:id", (req, res) => {
+
+    const eventId = req.params.id;
+
+    if (!/^\d+$/.test(eventId)) {
+        return res.status(400).json({
+            error: "Invalid event ID."
+        });
+    }
+
+    const sql = `
+        SELECT
+            events.id,
+            events.title,
+            events.event_date,
+            events.start_time,
+            events.end_time,
+            events.location,
+            events.image,
+            events.short_description,
+            events.full_description,
+            event_categories.name AS category,
+            CASE
+                WHEN date(events.event_date) < date('now')
+                THEN 1
+                ELSE 0
+            END AS is_past
+        FROM events
+        JOIN event_categories
+            ON events.category_id = event_categories.id
+        WHERE events.id = ?
+    `;
+
+    connection.get(sql, [eventId], (error, event) => {
+
+        if (error) {
+            console.error(
+                "Could not load event details:",
+                error.message
+            );
+
+            return res.status(500).json({
+                error: "Event details could not be loaded."
+            });
+        }
+
+        if (!event) {
+            return res.status(404).json({
+                error: "Event not found."
+            });
+        }
+
+        res.json(event);
+    });
+});
+
 // INTERACTIVE ACTIVITY PAGE
 
 app.get("/activity", (req, res) => {
